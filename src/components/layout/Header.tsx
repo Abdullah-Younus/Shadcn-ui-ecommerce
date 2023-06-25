@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import logo from '/public/logo.webp';
 import Image from 'next/image';
+import {ShoppingCart} from 'lucide-react'
+import { Input } from "@/components/ui/input"
+
 const Header = () => {
     return (
         <div className='flex justify-between items-center py-6 px-8'>
@@ -27,8 +30,10 @@ const Header = () => {
                     </Link>
                 </li>
             </ul>
-            <div className='h-10 w-10 rounded-full bg-gray-200'>
+            <Input />
 
+            <div className='h-10 w-10 rounded-full bg-gray-200 flex justify-center items-center'>
+                    <ShoppingCart className='h-6 w-6'/>
             </div>
         </div>
     )

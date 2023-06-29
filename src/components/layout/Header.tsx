@@ -10,17 +10,17 @@ const Header = () => {
             <Image src={logo} alt='logo' />
             <ul className='flex gap-x-10'>
                 <li className='text-lg'>
-                    <Link href={"#"}>
+                    <Link href={"/category/female"}>
                         Female
                     </Link>
                 </li>
                 <li className='text-lg'>
-                    <Link href={"#"}>
+                    <Link href={"/category/male"}>
                         Male
                     </Link>
                 </li>
                 <li className='text-lg'>
-                    <Link href={"#"}>
+                    <Link href={"/category/kids"}>
                         Kids
                     </Link>
                 </li>

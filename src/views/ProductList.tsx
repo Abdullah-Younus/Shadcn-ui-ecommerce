@@ -10,10 +10,11 @@ const ProductList = () => {
             {products.slice(0, 3).map((eachItem) => (
                 <ProductCard
                     key={eachItem.id}
-                    title={eachItem.productName}
+                    productName={eachItem.productName}
                     price={eachItem.price}
-                    img={eachItem.image}
-                />
+                    image={eachItem.image}
+                    category={eachItem.category}
+                    id={eachItem.id} />
             ))}
         </div>
     )

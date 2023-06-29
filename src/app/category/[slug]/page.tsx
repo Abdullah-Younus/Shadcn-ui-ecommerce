@@ -13,16 +13,16 @@ export default function Page({ params }: { params: { slug: string } }) {
 
     return (
         <div className='flex justify-evenly flex-wrap mt-16 gap-y-5'>
-        {result.map((eachItem) => (
-            <ProductCard
-                key={eachItem.id}
-                productName={eachItem.productName}
-                price={eachItem.price}
-                image={eachItem.image as StaticImageData}
-                category={eachItem.category}
-                id={eachItem.id}
-            />
-        ))}
-    </div>
+            {result.length > 0 ? result.map((eachItem) => (
+                <ProductCard
+                    key={eachItem.id}
+                    productName={eachItem.productName}
+                    price={eachItem.price}
+                    image={eachItem.image as StaticImageData}
+                    category={eachItem.category}
+                    id={eachItem.id}
+                />
+            )) : <p>No Products Found</p>}
+        </div>
     )
 }

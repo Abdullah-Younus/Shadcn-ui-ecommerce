@@ -2,6 +2,8 @@ import p1 from '/public/p1.png';
 import Image, { StaticImageData } from 'next/image';
 import { ProductCard } from '@/components/ProductCard';
 import { products } from '@/utils/mock';
+import Link from 'next/link';
+
 const ProductList = () => {
 
 

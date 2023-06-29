@@ -25,7 +25,7 @@ const Header = () => {
                     </Link>
                 </li>
                 <li className='text-lg'>
-                    <Link href={"#"}>
+                    <Link href={"/products"}>
                         All Products
                     </Link>
                 </li>

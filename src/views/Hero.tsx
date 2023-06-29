@@ -22,9 +22,8 @@ const Hero = () => {
             </div>
             {/* Right side  */}
             <div className="flex-1">
-                <Image src={heroImage} alt="Hero Image" />
+                <Image src={heroImage} alt="Hero Image"/>
             </div>
-
         </section>
     )
 }

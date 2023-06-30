@@ -10,6 +10,7 @@ export const products: Product[] = [
     {
         id: 1,
         productName: "Product One",
+        tagline: "Dress",
         category: "female",
         image: p1Image,
         price: 120,
@@ -17,6 +18,7 @@ export const products: Product[] = [
     {
         id: 2,
         productName: "Product Two",
+        tagline: "Dress",
         category: "male",
         image: p2Image,
         price: 130,
@@ -24,6 +26,7 @@ export const products: Product[] = [
     {
         id: 3,
         productName: "Product Three",
+        tagline: "Dress",
         category: "kids",
         image: p3Image,
         price: 190,
@@ -31,6 +34,7 @@ export const products: Product[] = [
     {
         id: 4,
         productName: "Product Two",
+        tagline: "Dress",
         category: "male",
         image: p4Image,
         price: 130,
@@ -38,6 +42,7 @@ export const products: Product[] = [
     {
         id: 5,
         productName: "Product Three",
+        tagline: "Dress",
         category: "kids",
         image: p5Image,
         price: 190,
@@ -45,6 +50,7 @@ export const products: Product[] = [
     {
         id: 6,
         productName: "Product Two",
+        tagline: "Dress",
         category: "male",
         image: p5Image,
         price: 130,
@@ -52,6 +58,7 @@ export const products: Product[] = [
     {
         id: 7,
         productName: "Product Three",
+        tagline: "Dress",
         category: "kids",
         image: p5Image,
         price: 190,
@@ -59,6 +66,7 @@ export const products: Product[] = [
     {
         id: 8,
         productName: "Product Three",
+        tagline: "Dress",
         category: "kids",
         image: p3Image,
         price: 190,
@@ -66,6 +74,7 @@ export const products: Product[] = [
     {
         id: 9,
         productName: "Product Three",
+        tagline: "Dress",
         category: "kids",
         image: p1Image,
         price: 190,

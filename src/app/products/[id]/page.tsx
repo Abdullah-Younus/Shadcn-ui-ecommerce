@@ -19,7 +19,6 @@ export default function Page({ params }: { params: { id: number } }) {
                 <div key={eachItem.id} className="flex justify-between gap-6">
                     {/* Left Side  */}
                     <div>
-
                         <Image src={eachItem.image} alt={eachItem.productName} />
                     </div>
                     {/* Right Side  */}
@@ -30,11 +29,9 @@ export default function Page({ params }: { params: { id: number } }) {
                         </div>
                         <div>
                             <h3 className="text-xs mt-6 font-semibold">SELECT SIZE</h3>
-                            <div className="h-6 w-6 border rounded-full hover:shadow-xl mt-2 ">
+                            <div className="h-6 w-6 border rounded-full hover:shadow-xl mt-2 flex justify-center items-center">
                                 <span className="text-xs font-semibold text-center text-gray-600">XS</span>
                             </div>
-
-
                         </div>
                     </div>
 

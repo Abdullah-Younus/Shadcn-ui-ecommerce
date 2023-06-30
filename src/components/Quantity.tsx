@@ -9,15 +9,15 @@ const Quantity = () => {
     return (
         <div className="flex gap-x-4 items-center">
             {/* Miunus   */}
-            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => { setNum(num - 1) }}>
+            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num <= 1 ? 1 : num - 1)}>
                 -
             </button>
             {/* Number   */}
             <span className="text-sm">
-                2
+                {num}
             </span>
             {/* Plus   */}
-            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => { setNum(num + 1) }}>
+            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num + 1)}>
                 +
             </button>
         </div>

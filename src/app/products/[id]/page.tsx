@@ -3,23 +3,29 @@ import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
 
 
-export default function Page({ params }: { params: { id: string } }) {
+const getProductDetails = (id: number) => {
+    return products.filter((product) => product.id === id);
+}
 
-    // const result = getProducts(params.slug);
+
+
+export default function Page({ params }: { params: { id: number } }) {
+
+    const result = getProductDetails(params.id);
 
     return (
-        <div>
-            <h1>This Page Show By Product Id: {params.id}</h1>
+        <div className="flex justify-evenly mt-16 py-10 flex-wrap">
+            {result.map((eachItem) => (
+                <div key={eachItem.id} className="flex justify-between">
+                    <div>
+                        <Image src={eachItem.image} alt={eachItem.productName} />
+                    </div>
+                    <div>
+                        Product Detailt
+                    </div>
+                </div>
+            ))}
         </div>
-        /* {result.length > 0 ? result.map((eachItem) => (
-            <ProductCard
-                key={eachItem.id}
-                productName={eachItem.productName}
-                price={eachItem.price}
-                image={eachItem.image as StaticImageData}
-                category={eachItem.category}
-                id={eachItem.id}
-            />
-        )) : <p>No Products Found</p>} */
+
     )
 }

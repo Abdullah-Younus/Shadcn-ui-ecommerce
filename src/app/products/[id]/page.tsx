@@ -1,6 +1,7 @@
 import { products } from "@/utils/mock";
 import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
+import Quantity from "@/components/Quantity";
 
 
 const getProductDetails = (id: number) => {
@@ -8,6 +9,13 @@ const getProductDetails = (id: number) => {
 }
 
 
+const sizes = [
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl"
+]
 
 export default function Page({ params }: { params: { id: number } }) {
 
@@ -29,8 +37,18 @@ export default function Page({ params }: { params: { id: number } }) {
                         </div>
                         <div>
                             <h3 className="text-xs mt-6 font-semibold">SELECT SIZE</h3>
-                            <div className="h-6 w-6 border rounded-full hover:shadow-xl mt-2 flex justify-center items-center">
-                                <span className="text-xs font-semibold text-center text-gray-600">XS</span>
+
+                            <div className="flex gap-x-5">
+                                {sizes.map((size, index) => (
+                                    <div key={index} className="flex justify-center items-center h-6 w-6 border rounded-full hover:shadow-xl mt-2">
+                                        <span className="text-[11px] font-semibold text-center text-gray-600">{size}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            {/* Quantity  */}
+                            <div className="flex gap-x-3 mt-6 items-center">
+                                <h3 className="text-[10px] font-semibold">Quantity:</h3>
+                                <Quantity />
                             </div>
                         </div>
                     </div>

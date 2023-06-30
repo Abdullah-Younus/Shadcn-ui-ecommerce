@@ -2,6 +2,7 @@ import { products } from "@/utils/mock";
 import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
 import Quantity from "@/components/Quantity";
+import { Button } from "@/components/ui/button";
 
 
 const getProductDetails = (id: number) => {
@@ -50,6 +51,11 @@ export default function Page({ params }: { params: { id: number } }) {
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
                                 <Quantity />
                             </div>
+                            <div className="flex mt-6 items-center gap-x-4">
+                                <Button className="bg-black h-9 px-8">Add to Cart</Button>
+                                <h2>${eachItem.price}</h2>
+                            </div>
+
                         </div>
                     </div>
 

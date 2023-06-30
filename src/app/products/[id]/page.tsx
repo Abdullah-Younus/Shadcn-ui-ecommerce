@@ -53,7 +53,7 @@ export default function Page({ params }: { params: { id: number } }) {
                             </div>
                             <div className="flex mt-6 items-center gap-x-4">
                                 <Button className="bg-black h-9 px-8">Add to Cart</Button>
-                                <h2>${eachItem.price}</h2>
+                                <h2 className="text-2xl font-bold">${eachItem.price.toFixed(2)}</h2>
                             </div>
 
                         </div>

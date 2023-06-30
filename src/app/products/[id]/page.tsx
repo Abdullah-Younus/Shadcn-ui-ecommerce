@@ -21,7 +21,10 @@ export default function Page({ params }: { params: { id: number } }) {
                         <Image src={eachItem.image} alt={eachItem.productName} />
                     </div>
                     <div>
-                        Product Detailt
+                        Product Detail
+                        <p>Name: {eachItem.productName}</p>
+                        <p>Price: {eachItem.price}</p>
+                        <p>Category: {eachItem.category}</p>
                     </div>
                 </div>
             ))}

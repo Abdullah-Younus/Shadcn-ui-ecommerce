@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 
 const getProductDetails = (id: number) => {
-    return products.filter((product) => product.id === id);
+    return products.filter((product) => product.id == id);
 }
 
 

@@ -24,7 +24,7 @@ const Header = () => {
                         {
                             eachItem.isDropDown ?
                                 <div >
-                                    <PanelTopOpen className='w-4 h-4' />
+                                    <PanelTopOpen className='w-4 h-4 rotate-180 group-hover:rotate-0' />
                                 </div>
                                 :
                                 ""
@@ -32,7 +32,7 @@ const Header = () => {
                         {eachItem.isDropDown && <div className={`invisible group-hover:visible absolute left-0 top-8 p-2 py-4 px-6 border border-gray-200 text-sm font-light min-w-[7.8rem]`}>
                             <DropdownMenu item={eachItem} />
                         </div>}
-                        
+
                     </li>
                 ))}
             </ul>

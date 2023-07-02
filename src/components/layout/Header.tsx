@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { navBarArray, NavbarType } from '@/utils/NavbarTypes';
 import { Search } from 'lucide-react';
 import { PanelTopOpen } from 'lucide-react';
-
+import DropdownMenu from '@/views/subcatergory/DropdownMenu';
 const Header = () => {
     return (
         <div className='py-6 flex justify-between items-center'>
@@ -17,7 +17,7 @@ const Header = () => {
             </div>
             <ul className='flex space-x-5 font-semibold text-lg'>
                 {navBarArray.map((eachItem: NavbarType, index: number) => (
-                    <li key={eachItem.id} className='flex justify-center items-center gap-x-3'>
+                    <li key={eachItem.id} className='flex items-center relative gap-x-3 px-3 py-1 hover:bg-gray-100 group'>
                         <Link href={eachItem.href}>
                             {eachItem.label}
                         </Link>
@@ -29,6 +29,10 @@ const Header = () => {
                                 :
                                 ""
                         }
+                        {eachItem.isDropDown && <div className={`invisible group-hover:visible absolute left-0 top-8 p-2 py-4 px-6 border border-gray-200 text-sm font-light min-w-[7.8rem]`}>
+                            <DropdownMenu item={eachItem} />
+                        </div>}
+                        
                     </li>
                 ))}
             </ul>

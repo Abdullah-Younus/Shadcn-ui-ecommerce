@@ -55,7 +55,6 @@ export default function Page({ params }: { params: { id: number } }) {
                                 <Button className="bg-black h-9 px-8">Add to Cart</Button>
                                 <h2 className="text-2xl font-bold">${eachItem.price.toFixed(2)}</h2>
                             </div>
-
                         </div>
                     </div>
 

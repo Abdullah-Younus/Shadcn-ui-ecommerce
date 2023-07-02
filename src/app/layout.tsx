@@ -1,6 +1,9 @@
 import './globals.css'
+import './scrollbar.css';
+
 import { Inter } from 'next/font/google'
 import Header from '@/components/layout/Header'
+import Wrapper from '@/components/shared/wrapper'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,11 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <main className='px-8'>
-          {children}
-        </main>
+      <body className="scrollbar">
+        <Wrapper>
+          <Header />
+          <main className='px-8'>
+            {children}
+          </main>
+        </Wrapper>
       </body>
     </html>
   )

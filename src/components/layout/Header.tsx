@@ -15,7 +15,7 @@ const Header = () => {
                     <Image src={logo} alt='logo' width={500} height={500} />
                 </Link>
             </div>
-            <ul className='flex space-x-4 font-semibold text-lg'>
+            <ul className='flex space-x-5 font-semibold text-lg'>
                 {navBarArray.map((eachItem: NavbarType, index: number) => (
                     <li key={eachItem.id} className='flex justify-center items-center gap-x-3'>
                         <Link href={eachItem.href}>

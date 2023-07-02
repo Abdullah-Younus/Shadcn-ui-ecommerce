@@ -5,6 +5,7 @@ import { ShoppingCart } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import { navBarArray, NavbarType } from '@/utils/NavbarTypes';
 import { Search } from 'lucide-react';
+import { PanelTopOpen } from 'lucide-react';
 
 const Header = () => {
     return (
@@ -16,10 +17,18 @@ const Header = () => {
             </div>
             <ul className='flex space-x-4 font-semibold text-lg'>
                 {navBarArray.map((eachItem: NavbarType, index: number) => (
-                    <li key={eachItem.id}>
+                    <li key={eachItem.id} className='flex justify-center items-center gap-x-3'>
                         <Link href={eachItem.href}>
                             {eachItem.label}
                         </Link>
+                        {
+                            eachItem.isDropDown ?
+                                <div >
+                                    <PanelTopOpen className='w-4 h-4' />
+                                </div>
+                                :
+                                ""
+                        }
                     </li>
                 ))}
             </ul>

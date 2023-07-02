@@ -11,13 +11,13 @@ export const navBarArray: Array<NavbarType> = [
         id: 1,
         label: "Female",
         href: "/category/female",
-        isDropDown: false,
+        isDropDown: true,
     },
     {
         id: 2,
         label: "Male",
         href: "/category/male",
-        isDropDown: false,
+        isDropDown: true,
     },
     {
         id: 3,

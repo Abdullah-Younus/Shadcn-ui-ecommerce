@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import logo from '/public/logo.webp';
 import Image from 'next/image';
-import { ShoppingCart } from 'lucide-react'
+import { Menu, ShoppingCart } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import { navBarArray, NavbarType } from '@/utils/NavbarTypes';
 import { Search } from 'lucide-react';
@@ -16,7 +16,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className='hidden lg:flex justify-between items-center w-full'>
-                <ul className='flex space-x-5 font-semibold text-lg'>
+                <ul className='flex space-x-4 font-semibold text-lg'>
                     {navBarArray.map((eachItem: NavbarType, index: number) => (
                         <li key={eachItem.id} className='flex items-center relative rounded-sm gap-x-3 px-3 py-1 hover:bg-gray-100 group'>
                             <Link href={eachItem.href}>
@@ -79,7 +79,9 @@ const Header = () => {
                     <ShoppingCart className='h-6 w-6' />
                 </div>
             </div> */}
-
+            </div>
+            <div className='flex lg:hidden'>
+                <Menu />
             </div>
         </div>
 

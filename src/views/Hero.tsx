@@ -21,7 +21,7 @@ const Hero = () => {
                 <Button className="bg-black h-12 px-8 mt-4">Start Shopping</Button>
             </div>
             {/* Right side  */}
-            <div className="flex-1">
+            <div className="flex-1 bg-[#ffece3] rounded-full w-auto h-auto">
                 <Image src={heroImage} alt="Hero Image"/>
             </div>
         </section>

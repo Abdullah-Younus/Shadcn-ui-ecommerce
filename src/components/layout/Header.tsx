@@ -10,11 +10,11 @@ import { Search } from 'lucide-react';
 import { PanelTopOpen } from 'lucide-react';
 import DropdownMenu from '@/views/subcatergory/DropdownMenu';
 import { XCircle } from 'lucide-react';
-import MobileMenu from '@/views/subcatergory/MobileMenu';
+// import MobileMenu from '@/views/subcatergory/MobileMenu';
+import Expand from '@/views/subcatergory/Expand';
+
 
 const Header = () => {
-
-
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     return (
         <div>
@@ -110,3 +110,21 @@ const Header = () => {
 }
 
 export default Header;
+
+const MobileMenu = () => {
+
+    return (
+        <div className="w-full px-6 py-4 bg-gray-100">
+            {
+                navBarArray.map((eachItem: NavbarType, index: number) => {
+                    return (
+                        <div key={index}>
+                            <Expand eachItem={eachItem} />
+                        </div>
+                    )
+                })
+            }
+        </div>
+
+    )
+}

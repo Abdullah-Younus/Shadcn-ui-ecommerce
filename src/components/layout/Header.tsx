@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import weblogo from '/public/Logo.webp';
+import weblogo from '/public/Logo.jpg';
 import Image from 'next/image';
 import { Menu, ShoppingCart } from 'lucide-react'
 import { Input } from "@/components/ui/input"

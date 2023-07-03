@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import logo from '/public/logo.webp';
+import logo from '/public/Logo.webp';
 import Image from 'next/image';
 import { Menu, ShoppingCart } from 'lucide-react'
 import { Input } from "@/components/ui/input"
@@ -13,7 +13,7 @@ import { XCircle } from 'lucide-react';
 import MobileMenu from '@/views/subcatergory/MobileMenu';
 
 const Header = () => {
-    
+
 
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     return (

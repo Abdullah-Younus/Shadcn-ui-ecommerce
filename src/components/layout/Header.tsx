@@ -13,6 +13,7 @@ import { XCircle } from 'lucide-react';
 import MobileMenu from '@/views/subcatergory/MobileMenu';
 
 const Header = () => {
+    
 
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     return (

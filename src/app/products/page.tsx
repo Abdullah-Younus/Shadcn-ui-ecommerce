@@ -13,6 +13,7 @@ const AllProducts = () => {
                         image={eachItem.image as StaticImageData}
                         category={eachItem.category}
                         id={eachItem.id}
+                        tagline={eachItem.tagline}
                     />
                 ))}
             </div>

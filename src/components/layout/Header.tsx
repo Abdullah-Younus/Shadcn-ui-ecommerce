@@ -15,7 +15,10 @@ import Expand from '@/views/subcatergory/Expand';
 
 
 const Header = () => {
+
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
+    const [cartItem, setCartItem] = useState<number>(0);
+
     return (
         <div>
             <div className='py-6 flex justify-between items-center space-x-12'>
@@ -52,7 +55,7 @@ const Header = () => {
                     </div>
                     <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
                         <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
-                            <span className='text-white'>3</span>
+                            <span className='text-white'>{cartItem}</span>
                         </div>
                         <ShoppingCart className='h-7 w-7' />
                     </div>

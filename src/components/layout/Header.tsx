@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import logo from '/public/Logo.webp';
+import weblogo from '/public/Logo.webp';
 import Image from 'next/image';
 import { Menu, ShoppingCart } from 'lucide-react'
 import { Input } from "@/components/ui/input"
@@ -21,7 +21,7 @@ const Header = () => {
             <div className='py-6 flex justify-between items-center space-x-12'>
                 <div className='w-36 flex-shrink-0'>
                     <Link href={"/"}>
-                        <Image src={logo} alt='logo' width={500} height={500} />
+                        <Image src={weblogo} alt='logo' width={500} height={500} />
                     </Link>
                 </div>
                 <div className='hidden lg:flex justify-between items-center w-full'>

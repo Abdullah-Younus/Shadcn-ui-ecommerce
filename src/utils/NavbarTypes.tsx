@@ -18,8 +18,8 @@ export const navBarArray: Array<NavbarType> = [
                 href: "/category/female/dresses"
             },
             {
-                label: "Shirts",
-                href: "/category/female/shirts"
+                label: "t-Shirts",
+                href: "/category/female/t-shirts"
             },
             {
                 label: "Jacket",

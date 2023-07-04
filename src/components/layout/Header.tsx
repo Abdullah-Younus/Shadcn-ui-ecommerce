@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className='py-6 flex justify-between items-center space-x-12'>
+            <div className='py-6 flex justify-between items-center backdrop-blur-lg space-x-12'>
                 <div className='w-36 flex-shrink-0'>
                     <Link href={"/"}>
                         <Image src={weblogo} alt='logo' width={500} height={500} />

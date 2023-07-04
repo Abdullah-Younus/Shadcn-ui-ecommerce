@@ -66,11 +66,16 @@ export const product = {
             type: "number",
         },
         {
+            name: "size",
+            title: "Size",
+            type: "array",
+            of: [{ type: 'string' }]
+        },
+        {
             name: "quantity",
             title: "Quantity",
             type: "string"
         }
-
         // defineField({
         //     name: "category",
         //     title: "Product Category",  

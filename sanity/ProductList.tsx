@@ -20,7 +20,7 @@ export const product = {
                 slugify: (input: string) => input
                     .toLowerCase()
                     .replace(/\s+/g, '-')
-                    .slice(0,200)
+                    .slice(0, 200)
             }
         },
         {
@@ -32,11 +32,6 @@ export const product = {
                     type: "block"
                 }
             ]
-        },
-        {
-            name: "price",
-            title: "Product Price",
-            type: "number",
         },
         {
             name: "image",
@@ -65,6 +60,16 @@ export const product = {
                 }
             ]
         },
+        {
+            name: "price",
+            title: "Product Price",
+            type: "number",
+        },
+        {
+            name: "quantity",
+            title: "Quantity",
+            type: "string"
+        }
 
         // defineField({
         //     name: "category",

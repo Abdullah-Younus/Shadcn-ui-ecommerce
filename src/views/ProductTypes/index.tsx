@@ -12,9 +12,9 @@ const ProductType = () => {
                     Our Promotions Events
                 </h3>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2 text-gray-800'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6 text-gray-800'>
 
-                <div className='w-full flex flex-col items-center justify-between md:flex-row  h-auto col-span-1 md:col-span-2 rounded-md px-12 bg-[#d6d6d8]'>
+                <div className='w-full flex flex-col items-center justify-between sm:flex-row  h-auto col-span-1 md:col-span-2 rounded-md px-12 bg-[#d6d6d8]'>
                     <div className='max-w-[13rem] py-8'>
                         <h4 className="scroll-m-20 text-3xl font-extrabold tracking-tight">
                             GET UP TO 60%

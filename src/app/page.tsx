@@ -6,6 +6,7 @@ import BASE_PATH_FORAPI from '@/components/shared/BaseUrl';
 import ProductCarousel from '@/views/ProductCarousal';
 
 async function fetchAllProductsData() {
+  console.log(BASE_PATH_FORAPI);
   const res = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 
   if (!res.ok) {

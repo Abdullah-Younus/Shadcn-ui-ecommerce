@@ -12,13 +12,13 @@ const ProductType = () => {
                     Our Promotions Events
                 </h3>
             </div>
-            <div className='grid grid-cols-4 gap-6 px-2 text-gray-800 '>
-                <div className='w-full flex col-span-2 px-12 bg-[#d6d6d8]'>
+            <div className='grid grid-cols-4 gap-6 px-2 text-gray-800'>
+                <div className='w-full flex h-auto col-span-2 px-12 bg-[#d6d6d8]'>
                     <div className='max-w-[13rem] py-8'>
                         <h4 className="scroll-m-20 text-3xl font-extrabold tracking-tight">
                             GET UP TO 60%
                         </h4>
-                        <p className="text-xl leading-7 [&:not(:first-child)]:mt-6">
+                        <p className="text-xl leading-7">
                             For the summer season
                         </p>
                     </div>
@@ -52,7 +52,7 @@ const ProductType = () => {
                         <Image src={"https://full-stack-ecommerce-clothing-web.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fevent3.798fa92b.png&w=384&q=75"} alt='Banner Image' width={1000} height={1000} />
                     </div>
                 </div>
-                <div className='text-white w-full col-span-2 bg-[#212121] flex flex-col justify-center items-center space-y-2'>
+                <div className='text-white w-full col-span-2 bg-[#212121] flex flex-col justify-center items-center space-y-4'>
                     <h3 className='text-white font-semibold text-4xl'>
                         GET 30% Off
                     </h3>

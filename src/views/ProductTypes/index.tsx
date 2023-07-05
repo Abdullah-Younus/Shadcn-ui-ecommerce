@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const ProductType = () => {
+    
     return (
         <div className='py-16 px-2 space-y-5'>
             <div className='text-center py-5 space-y-3'>

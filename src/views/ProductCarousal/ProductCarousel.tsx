@@ -16,10 +16,11 @@ interface IProduct {
 
 const ProductCarousel: FC<{ ProductData: Array<oneProductType> }> = ({ ProductData }: any) => {
 
+
     // console.log('data ==>', ProductData)
     return (
-        <div>
-            {ProductData.map((eachItem: oneProductType, index: number) => (
+        <div className="grid">
+            {ProductData.slice(0, 3).map((eachItem: oneProductType, index: number) => (
                 <div key={index}>
                     <Card singleProductData={eachItem} />
                 </div>

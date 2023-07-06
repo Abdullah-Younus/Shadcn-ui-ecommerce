@@ -7,7 +7,7 @@ export interface oneProductType {
     _rev:string,
     _type:string,
     quantity: string,
-    description: Array<object | string>,
+    description: Array<object>,
     size: Array<object | string>,
     price: number
 }

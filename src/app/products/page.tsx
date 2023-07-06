@@ -1,7 +1,9 @@
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/utils/mock";
 import Image, { StaticImageData } from "next/image";
-const AllProducts = () => {
+
+function AllProducts() 
+{
     return (
         <div>
             <div className='flex justify-evenly flex-wrap mt-16 gap-y-5'>

@@ -2,7 +2,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import heroImage from '/public/heroImage.webp'
 import Image from "next/image";
-const Hero = () => {
+
+
+function Hero() {
     return (
         <section className="flex flex-col lg:flex-row gap-y-10 py-6">
             {/* left side  */}
@@ -37,4 +39,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero;

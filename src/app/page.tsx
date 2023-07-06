@@ -10,12 +10,12 @@ import { client } from '@/lib/sanityClient';
 
 const getProductData = async () => {
   try {
-    const res = await fetch(`https://shadcn-ui-ecommerce.vercel.app/api/products`)
+    const data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 
-    if (!res.ok) {
+    if (!data.ok) {
       throw new Error("Failed to fetch")
     }
-    return res.json();
+    return data.json();
 
   } catch (error) {
     console.log('Error ===>', error);

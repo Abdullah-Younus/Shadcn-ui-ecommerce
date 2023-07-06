@@ -6,7 +6,6 @@ import BASE_PATH_FORAPI from '@/components/shared/BaseUrl';
 import ProductCarousel from '@/views/ProductCarousal';
 
 async function fetchAllProductsData() {
-  console.log(BASE_PATH_FORAPI);
   const res = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 
   if (!res.ok) {
@@ -16,7 +15,7 @@ async function fetchAllProductsData() {
 }
 
 
-export default async function Home() {
+async function Page() {
 
   const { data } = await fetchAllProductsData()
   console.log(data);
@@ -29,3 +28,6 @@ export default async function Home() {
     </div>
   )
 }
+
+
+export default Page;

@@ -9,13 +9,10 @@ import { client } from '@/lib/sanityClient';
 
 
 async function getProductData() {
-  try {
-    let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
-    return await data.json();
-  } catch (error) {
-    console.log('Error ===>', error);
-    throw error; // Propagate the error further
-  }
+
+  let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
+  return data.json();
+
 }
 
 

@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
   images: {
-    domains: ['full-stack-ecommerce-clothing-web.vercel.app'],
+    domains: ['full-stack-ecommerce-clothing-web.vercel.app',"cdn.sanity.io"],
   },
 }
 

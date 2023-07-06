@@ -10,7 +10,7 @@ import { client } from '@/lib/sanityClient';
 
 async function getProductData() {
   try {
-    const data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
+    let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 
     if (!data.ok) {
       throw new Error("Failed to fetch")
@@ -27,14 +27,14 @@ async function getProductData() {
 
 
 
-export default async function Page() {
+export default async function Home() {
 
-  const data = await getProductData();
+  let data = await getProductData();
   console.log(data);
   return (
     <div>
-      <Hero />
-      <ProductType />
+      {/* <Hero /> */}
+      {/* <ProductType /> */}
       <ProductCarousel />
       {/* <ProductList/> */}
     </div>

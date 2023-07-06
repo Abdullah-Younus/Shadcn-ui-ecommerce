@@ -11,7 +11,7 @@ interface IProduct {
     price: string
 }
 
-function ProductCarousel() {
+const ProductCarousel = ({ data }: any) => {
     return (
         <div>Product Carousel</div>
     )

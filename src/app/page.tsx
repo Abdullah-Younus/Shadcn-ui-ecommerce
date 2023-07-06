@@ -8,41 +8,28 @@ import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
 
 
-// export const getProductData = () => {
-//   // try {
-//   //   const res = await fetch(`https://shadcn-ui-ecommerce.vercel.app/api/products`)
+const getProductData = async () => {
+  try {
+    const res = await fetch(`https://shadcn-ui-ecommerce.vercel.app/api/products`)
 
-//   //   if (!res.ok) {
-//   //     throw new Error("Failed to fetch")
-//   //   }
-//   //   return res.json();
+    if (!res.ok) {
+      throw new Error("Failed to fetch")
+    }
+    return res.json();
 
-//   // } catch (error) {
-//   //   console.log('Error ===>', error);
-//   //   throw error; // Propagate the error further
-//   // }
-//   return "hi"
-// }
-
-export const getProductData = async () => {
-  const res = await client.fetch(`*[_type=='product']`)
-  return res
-}
-
-interface IProduct {
-  title: string,
-  _id: string,
-  description: string,
-  image: IImage,
-  price: number,
-  category: {
-    name: string
+  } catch (error) {
+    console.log('Error ===>', error);
+    throw error; // Propagate the error further
   }
 }
 
+
+
+
+
 export default async function Page() {
 
-  const data: IProduct[] = await getProductData();
+  const data = await getProductData();
   console.log(data);
   return (
     <div>

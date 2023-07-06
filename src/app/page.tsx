@@ -29,7 +29,7 @@ async function getProductData() {
 
 async function Home() {
 
-  let data = await getProductData();
+  let { data } = await getProductData();
   console.log(data);
   return (
     <div>

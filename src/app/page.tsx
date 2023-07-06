@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Hero from '@/views/Hero';
 import ProductList from '@/views/ProductList';
 import ProductType from '@/views/ProductTypes';
-import BASE_PATH_FORAPI from '@/components/shared/BaseUrl';
+import { BASE_PATH_FORAPI } from '@/components/shared/BaseUrl';
 import ProductCarousel from '@/views/ProductCarousal';
 import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
@@ -35,7 +35,7 @@ async function Home() {
     <div>
       <Hero />
       <ProductType />
-      <ProductCarousel data={data}/>
+      <ProductCarousel data={data} />
       {/* <ProductList/> */}
     </div>
   )

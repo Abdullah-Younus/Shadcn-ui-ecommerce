@@ -8,7 +8,7 @@ import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
 
 
-const getProductData = async () => {
+async function getProductData() {
   try {
     const data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 

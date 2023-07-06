@@ -1,4 +1,6 @@
+import { oneProductType } from "@/utils/ProductTypes";
 import { FC } from "react";
+import Card from "../Card";
 
 interface IProduct {
     id?: string,
@@ -12,9 +14,17 @@ interface IProduct {
     price: string
 }
 
-const ProductCarousel = ({ data }: any) => {
+const ProductCarousel: FC<{ ProductData: Array<oneProductType> }> = ({ ProductData }: any) => {
+
+    // console.log('data ==>', ProductData)
     return (
-        <div>Product Carousel</div>
+        <div>
+            {ProductData.map((eachItem: oneProductType, index: number) => (
+                <div key={index}>
+                    <Card singleProductData={eachItem} />
+                </div>
+            ))}
+        </div>
     )
 }
 

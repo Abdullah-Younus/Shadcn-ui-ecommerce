@@ -28,14 +28,13 @@ async function getProductData() {
 
 async function Home() {
 
-  let data = await getProductData();
+  let { data } = await getProductData();
 
-  console.log('checking',data);
   return (
     <div>
       <Hero />
       <ProductType />
-      <ProductCarousel data={data} />
+      <ProductCarousel ProductData={data} />
       {/* <ProductList/> */}
     </div>
   )

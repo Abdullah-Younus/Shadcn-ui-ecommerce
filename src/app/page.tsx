@@ -10,8 +10,8 @@ import { client } from '@/lib/sanityClient';
 
 async function getProductData() {
 
-  let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
-  return data.json();
+  let res = await fetch(`${BASE_PATH_FORAPI}/api/products`)
+  return res.json();
 
 }
 

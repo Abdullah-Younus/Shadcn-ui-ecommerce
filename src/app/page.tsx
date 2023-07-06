@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Hero from '@/views/Hero';
 import ProductList from '@/views/ProductList';
-import ProductType from '@/views/ProductTypes';
+import ProductType from '@/views/ProductTypes/ProductType';
 import { BASE_PATH_FORAPI } from '@/components/shared/BaseUrl';
-import ProductCarousel from '@/views/ProductCarousal';
+import ProductCarousel from '@/views/ProductCarousal/ProductCarousel';
 import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
 

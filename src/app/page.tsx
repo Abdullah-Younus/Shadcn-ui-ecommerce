@@ -8,7 +8,7 @@ import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
 
 
-async function getProductData() {
+export async function getProductData() {
   try {
     let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
 
@@ -27,17 +27,18 @@ async function getProductData() {
 
 
 
-export default async function Home() {
+async function Home() {
 
   let data = await getProductData();
   console.log(data);
   return (
     <div>
-      {/* <Hero /> */}
-      {/* <ProductType /> */}
-      <ProductCarousel />
+      <Hero />
+      <ProductType />
+      {/* <ProductCarousel /> */}
       {/* <ProductList/> */}
     </div>
   )
 }
 
+export default Home 

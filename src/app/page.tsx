@@ -11,12 +11,7 @@ import { client } from '@/lib/sanityClient';
 async function getProductData() {
   try {
     let data = await fetch(`${BASE_PATH_FORAPI}/api/products`)
-
-    if (!data.ok) {
-      throw new Error("Failed to fetch")
-    }
-    return data.json();
-
+    return await data.json();
   } catch (error) {
     console.log('Error ===>', error);
     throw error; // Propagate the error further
@@ -30,7 +25,7 @@ async function getProductData() {
 async function Home() {
 
   let data = await getProductData();
-  
+
   console.log(data);
   return (
     <div>

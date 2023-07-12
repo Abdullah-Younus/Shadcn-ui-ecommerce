@@ -93,15 +93,16 @@ const Header = () => {
             </div> */}
                 </div>
                 <div onClick={() => setNavbarOpen(!navbarOpen)}>
-                    {navbarOpen
-                        ?
-                        <div className='flex lg:hidden'>
-                            <XCircle />
-                        </div>
-                        :
-                        <div className='flex lg:hidden'>
-                            <Menu />
-                        </div>
+                    {
+                        navbarOpen
+                            ?
+                            <div className='flex lg:hidden'>
+                                <XCircle />
+                            </div>
+                            :
+                            <div className='flex lg:hidden'>
+                                <Menu />
+                            </div>
                     }
                 </div>
             </div>
@@ -128,6 +129,5 @@ const MobileMenu = () => {
                 })
             }
         </div>
-
     )
 }

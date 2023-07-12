@@ -11,13 +11,19 @@ interface ProductData {
 }
 
 export const ProductCard = ({ productName, price, image, category, id }: Product) => {
+
     return (
         <div>
             <Link href={`/products/${id}`}>
                 <Image src={image} alt='Picture' />
-                <h3 className='font-bold text-lg mt-3'>{productName}</h3>
-                <p className='font-bold text-lg'>${price}</p>
-                <p className='font-bold text-lg'>Category :
+                <h3 className='font-bold text-lg mt-3'>
+                    {productName}
+                </h3>
+                <p className='font-bold text-lg'>
+                    ${price}
+                </p>
+                <p className='font-bold text-lg'>
+                    Category :
                     <span className='text-base font-normal capitalize'>
                         {category}
                     </span>

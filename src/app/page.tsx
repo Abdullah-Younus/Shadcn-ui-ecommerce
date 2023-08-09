@@ -6,6 +6,7 @@ import { BASE_PATH_FORAPI } from '@/components/shared/BaseUrl';
 import ProductCarousel from '@/views/ProductCarousal/ProductCarousel';
 import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
+import Jewellery from '@/views/Jewellery/index';
 
 async function getProductData() {
   try {
@@ -35,6 +36,7 @@ async function Home() {
       <Hero />
       <ProductType />
       <ProductCarousel ProductData={data} />
+      <Jewellery/>
       {/* <ProductList/> */}
     </div>
   )

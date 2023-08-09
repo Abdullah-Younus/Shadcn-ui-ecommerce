@@ -7,6 +7,7 @@ import ProductCarousel from '@/views/ProductCarousal/ProductCarousel';
 import { Image as IImage } from 'sanity';
 import { client } from '@/lib/sanityClient';
 import Jewellery from '@/views/Jewellery/index';
+import Newslatter from '@/views/NewsLetter';
 
 async function getProductData() {
   try {
@@ -37,6 +38,7 @@ async function Home() {
       <ProductType />
       <ProductCarousel ProductData={data} />
       <Jewellery/>
+      <Newslatter/>
       {/* <ProductList/> */}
     </div>
   )

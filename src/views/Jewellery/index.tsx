@@ -11,7 +11,7 @@ const Jewellery = () => {
       {/* bottom  */}
       <div className='flex flex-col md:flex-row justify-between py-4 mt-2 gap-5'>
         {/* left  */}
-        <div className='relative flex-1 border-4 gap-10 grid grid-cols-2 grid-rows-2'>
+        <div className='relative flex-1 border-4 gap-6 grid grid-cols-2 grid-rows-2'>
           <div className='absolute -z-50  inset-0'>
             <h6 className='text-5xl md:text-7xl lg:text-[7.3rem] text-slate-200 leading-[5.9rem] font-bold'>Different from others</h6>
           </div>
@@ -39,7 +39,7 @@ const Jewellery = () => {
             <Image src={'/public/p1.png'} alt='Materials' width={1000} height={1000} />
           </div>
           <div className='p-6'>
-            <p style={{ wordSpacing: "0.8rem" }} className='h-[90%] max-w-[15rem]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa laboriosam tempore, atque quam quis aut doloremque? Suscipit at quaerat, inventore, nam, provident ratione quae cumque sapiente mollitia perferendis accusamus nemo!</p>
+            <p style={{ wordSpacing: "0.8rem" }} className='h-[90%] lg:max-w-[15rem]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa laboriosam tempore, atque quam quis aut doloremque? Suscipit at quaerat, inventore, nam, provident ratione quae cumque sapiente mollitia perferendis accusamus nemo!</p>
             <button className='text-white bg-gray-900 rounded-md py-2 px-6'>See All Products</button>
           </div>
         </div>

@@ -3,6 +3,21 @@ import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
 import Quantity from "@/components/Quantity";
 import { Button } from "@/components/ui/button";
+import { client } from "../../../../sanity/lib/client";
+
+/// sanity kae liya
+const getProduct = async ({ params }: any) => {
+    const query = `*[_type == "product" && slug.current == "${params.slug}"][0]{
+        _id,
+        name,
+        price,
+        description,
+        subcat,
+        image,
+    }`;
+    const res = await client.fetch(query);
+    return res;
+}
 
 
 const getProductDetails = (id: number) => {
@@ -19,7 +34,7 @@ const sizes = [
 ]
 
 export default function Page({ params }: { params: { id: number } }) {
-    
+
     const result = getProductDetails(params.id);
 
     return (
@@ -49,7 +64,7 @@ export default function Page({ params }: { params: { id: number } }) {
                             {/* Quantity  */}
                             <div className="flex gap-x-3 mt-6 items-center">
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
-                                {/* <Quantity product={eachItem}/> */}
+                                <Quantity product={eachItem} num={1} />
                             </div>
                             <div className="flex mt-6 items-center gap-x-4">
                                 <Button className="bg-black h-9 px-8">Add to Cart</Button>
@@ -63,4 +78,19 @@ export default function Page({ params }: { params: { id: number } }) {
         </div>
 
     )
+}
+
+
+
+export async function generateStaticParams() {
+    const query = `*[_type == "product"]{
+        slug{
+            current
+        }
+    }`;
+    const res = await client.fetch(query);
+
+    return res.map((product: { slug: { current: any; }; }) => ({
+        slug: product.slug.current
+    }))
 }

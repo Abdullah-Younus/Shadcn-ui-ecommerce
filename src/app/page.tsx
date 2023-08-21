@@ -5,7 +5,7 @@ import ProductType from '@/views/ProductTypes/ProductType';
 import { BASE_PATH_FORAPI } from '@/components/shared/BaseUrl';
 import ProductCarousel from '@/views/ProductCarousal/ProductCarousel';
 import { Image as IImage } from 'sanity';
-import { client } from '@/lib/sanityClient';
+import { client } from '../../sanity/lib/client';
 import Jewellery from '@/views/Jewellery/index';
 import Newslatter from '@/views/NewsLetter';
 

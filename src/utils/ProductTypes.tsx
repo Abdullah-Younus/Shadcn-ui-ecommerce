@@ -6,7 +6,7 @@ export interface oneProductType {
     title: string,
     image: Array<object | string>,
     productTypes: Array<object | string>,
-    slug: object,
+    slug: object | any,
     _rev: string,
     _type: string,
     quantity: string,

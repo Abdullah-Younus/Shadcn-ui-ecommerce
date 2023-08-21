@@ -6,7 +6,7 @@ export async function GET(request: NextRequest, res: NextResponse) {
         let data = await client.fetch(`*[_type=='product']`)
         return NextResponse.json({
             data: data
-        })
+        });
     } catch (error) {
         return NextResponse.json({ message: error })
     }

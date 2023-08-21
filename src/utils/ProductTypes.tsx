@@ -1,3 +1,5 @@
+import { Image } from "sanity";
+
 export interface oneProductType {
     id?: string,
     title: string,
@@ -9,10 +11,22 @@ export interface oneProductType {
     quantity: string,
     description: Array<object>,
     size: Array<object | string>,
-    price: number
+    price: number,
 }
 
 
 export interface responseType {
     result: Array<oneProductType>
+}
+
+/// redux slice interface
+export interface Product {
+    _id: string;
+    name: string;
+    price: number;
+    totalPrice: number;
+    subcat: string;
+    image: Array<Image>;
+    userId: string;
+    quantity: number;
 }

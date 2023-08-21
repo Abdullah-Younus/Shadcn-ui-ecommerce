@@ -9,12 +9,12 @@ function AllProducts()
             <div className='flex justify-evenly flex-wrap mt-16 gap-y-5'>
                 {products.map((eachItem) => (
                     <ProductCard
-                        key={eachItem.id}
-                        productName={eachItem.productName}
+                        key={eachItem._id}
+                        name={eachItem.name}
                         price={eachItem.price}
                         image={eachItem.image as StaticImageData}
                         category={eachItem.category}
-                        id={eachItem.id}
+                        _id={eachItem._id}
                         tagline={eachItem.tagline}
                     />
                 ))}

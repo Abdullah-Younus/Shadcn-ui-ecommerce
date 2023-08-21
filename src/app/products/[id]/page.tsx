@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 
 const getProductDetails = (id: number) => {
-    return products.filter((product) => product.id == id);
+    return products.filter((product) => product._id == id);
 }
 
 
@@ -19,21 +19,21 @@ const sizes = [
 ]
 
 export default function Page({ params }: { params: { id: number } }) {
-
+    
     const result = getProductDetails(params.id);
 
     return (
         <div className="flex mt-16 py-10 flex-wrap">
             {result.map((eachItem) => (
-                <div key={eachItem.id} className="flex justify-between gap-6">
+                <div key={eachItem._id} className="flex justify-between gap-6">
                     {/* Left Side  */}
                     <div>
-                        <Image src={eachItem.image} alt={eachItem.productName} />
+                        <Image src={eachItem.image} alt={eachItem.name} />
                     </div>
                     {/* Right Side  */}
                     <div>
                         <div>
-                            <h1 className="text-2xl">{eachItem.productName}</h1>
+                            <h1 className="text-2xl">{eachItem.name}</h1>
                             <h2 className="text-base text-gray-400 font-semibold">{eachItem.tagline}</h2>
                         </div>
                         <div>
@@ -49,7 +49,7 @@ export default function Page({ params }: { params: { id: number } }) {
                             {/* Quantity  */}
                             <div className="flex gap-x-3 mt-6 items-center">
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
-                                <Quantity />
+                                {/* <Quantity product={eachItem}/> */}
                             </div>
                             <div className="flex mt-6 items-center gap-x-4">
                                 <Button className="bg-black h-9 px-8">Add to Cart</Button>

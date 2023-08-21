@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import p1Image from '/public/p1.png';
 import { FC } from "react";
 import { Button } from "@/components/ui/button"
-import { Product } from '@/utils/types';
+import { Product } from '@/utils/ProductTypes';
 import Link from 'next/link';
 interface ProductData {
     title: string,
@@ -10,14 +10,14 @@ interface ProductData {
     img: StaticImageData | string
 }
 
-export const ProductCard = ({ productName, price, image, category, id }: Product) => {
+export const ProductCard = ({ name, price, image, category, _id }: Product) => {
 
     return (
         <div>
-            <Link href={`/products/${id}`}>
+            <Link href={`/products/${_id}`}>
                 <Image src={image} alt='Picture' />
                 <h3 className='font-bold text-lg mt-3'>
-                    {productName}
+                    {name}
                 </h3>
                 <p className='font-bold text-lg'>
                     ${price}

@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { Image } from "sanity";
 
 export interface oneProductType {
@@ -21,12 +22,14 @@ export interface responseType {
 
 /// redux slice interface
 export interface Product {
-    _id: string;
+    _id: number;
     name: string;
     price: number;
-    totalPrice: number;
-    subcat: string;
-    image: Array<Image>;
-    userId: string;
-    quantity: number;
+    totalPrice?: number;
+    subcat?: string;
+    image: StaticImageData | string | any;
+    userId?: string;
+    quantity?: number;
+    tagline:string;
+    category:string;
 }

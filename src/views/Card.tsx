@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { oneProductType } from "@/utils/ProductTypes";
 import Image from "next/image";
 import imageUrlBuilder from '@sanity/image-url'
-import { client } from "@/lib/sanityClient";
+import { client } from "../../sanity/lib/client";
 import PortableText from "react-portable-text";
 import Link from "next/link";
 

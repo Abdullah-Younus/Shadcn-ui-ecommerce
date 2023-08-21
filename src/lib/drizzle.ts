@@ -1,3 +1,4 @@
+import { InferModel } from 'drizzle-orm';
 import { pgTable, serial, text, varchar, integer } from 'drizzle-orm/pg-core';
 
 export const cartTable = pgTable("cart_details", {
@@ -10,4 +11,7 @@ export const cartTable = pgTable("cart_details", {
     price: integer("price").notNull(),
     quantity: integer("quantity").notNull(),
     total_price: integer("total_price").notNull()
-})
+});
+
+export type Cart = InferModel<typeof cartTable>;
+export type addToCart = InferModel<typeof cartTable, "insert">;

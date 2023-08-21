@@ -36,6 +36,7 @@ const sizes = [
 export default function Page({ params }: { params: { id: number } }) {
 
     const result = getProductDetails(params.id);
+    
 
     return (
         <div className="flex mt-16 py-10 flex-wrap">
@@ -66,10 +67,7 @@ export default function Page({ params }: { params: { id: number } }) {
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
                                 <Quantity product={eachItem} num={1} />
                             </div>
-                            <div className="flex mt-6 items-center gap-x-4">
-                                <Button className="bg-black h-9 px-8">Add to Cart</Button>
-                                <h2 className="text-2xl font-bold">${eachItem.price.toFixed(2)}</h2>
-                            </div>
+                           
                         </div>
                     </div>
 

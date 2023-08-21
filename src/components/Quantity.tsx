@@ -8,15 +8,15 @@ import { Product } from "@/utils/ProductTypes";
 
 
 type IProps = {
-    product:Product;
-    num:number;
+    product: Product;
+    num: number;
 }
 
 
 const Quantity = (props: IProps) => {
 
-    const [num, setNum] = useState(1)
     const dispatch = useDispatch();
+    const [num, setNum] = useState(1)
 
 
     const addToCart = () => {
@@ -24,20 +24,27 @@ const Quantity = (props: IProps) => {
     }
 
     return (
-        <div className="flex gap-x-4 items-center">
-            {/* Miunus   */}
-            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num <= 1 ? 1 : num - 1)}>
-                -
-            </button>
-            {/* Number   */}
-            <span className="text-sm">
-                {num}
-            </span>
-            {/* Plus   */}
-            <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num + 1)}>
-                +
-            </button>
-        </div>
+        <>
+            <div className="flex gap-x-4 items-center">
+                {/* Miunus   */}
+                <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num <= 1 ? 1 : num - 1)}>
+                    -
+                </button>
+                {/* Number   */}
+                <span className="text-sm">
+                    {num}
+                </span>
+                {/* Plus   */}
+                <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num + 1)}>
+                    +
+                </button>
+            </div>
+            <div className="flex justify-center mt-6 items-center gap-x-4">
+                <Button className="bg-black h-9 px-8" onClick={addToCart}>Add to Cart</Button>
+                <h2 className="text-2xl font-bold">${props.product.price.toFixed(2)}</h2>
+            </div>
+        </>
+
     )
 }
 

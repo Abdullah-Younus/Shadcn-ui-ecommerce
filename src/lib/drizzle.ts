@@ -1,5 +1,8 @@
 import { InferModel } from 'drizzle-orm';
 import { pgTable, serial, text, varchar, integer } from 'drizzle-orm/pg-core';
+import { drizzle } from "drizzle-orm/vercel-postgres";
+import { sql } from "@vercel/postgres";
+
 
 export const cartTable = pgTable("cart_details", {
     id: serial("id").primaryKey().notNull(),
@@ -15,3 +18,6 @@ export const cartTable = pgTable("cart_details", {
 
 export type Cart = InferModel<typeof cartTable>;
 export type addToCart = InferModel<typeof cartTable, "insert">;
+
+
+export const db = drizzle(sql)

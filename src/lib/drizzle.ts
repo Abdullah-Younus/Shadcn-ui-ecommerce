@@ -1,0 +1,13 @@
+import { pgTable, serial, text, varchar, integer } from 'drizzle-orm/pg-core';
+
+export const cartTable = pgTable("cart_details", {
+    id: serial("id").primaryKey().notNull(),
+    user_id: varchar("user_id", { length: 255 }).notNull(),
+    product_id: varchar("product_id", { length: 255 }).notNull(),
+    product_name: varchar("product_name", { length: 255 }).notNull(),
+    subcat: varchar("subcat", { length: 255 }).notNull(),
+    image: text("image").notNull(),
+    price: integer("price").notNull(),
+    quantity: integer("quantity").notNull(),
+    total_price: integer("total_price").notNull()
+})

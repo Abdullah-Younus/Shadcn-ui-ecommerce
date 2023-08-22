@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { useDispatch } from "react-redux";
@@ -22,13 +21,11 @@ const Quantity = (props: IProps) => {
     const [num, setNum] = useState(1)
 
     const getDataFromDB = async () => {
-        const res = await fetch(`/api/cart/${props.userId}`)
+        const res = await fetch(`/api/cart/${props.userId}`);
         if (!res.ok) {
             throw new Error("Failed to fetch data");
         }
-
         const data = await res.json();
-
         return data;
     }
 
@@ -50,13 +47,11 @@ const Quantity = (props: IProps) => {
 
     const handleCart = async () => {
         try {
-            const cartData = await getDataFromDB();
-            // console.log('CartData ===>', cartData);
-            const existingItem = cartData.cartItems.find((item: any) => item._id === props.product._id);
-            console.log('existingItem ===>', existingItem);
-            console.log('props.product._id ===>', props.product._id);
 
+            const cartData = await getDataFromDB();
+            const existingItem = cartData?.cartItems?.find((item: any) => parseInt(item._id) === props.product._id);
             if (existingItem) {
+                console.log('existingItem', existingItem);
                 const newQuantity = existingItem.quantity + num;
                 const newTotalPrice = props.product.price * newQuantity;
 
@@ -68,14 +63,13 @@ const Quantity = (props: IProps) => {
                         price: newTotalPrice
                     })
                 });
+
                 if (!res.ok) {
                     throw new Error("Failed to update Data");
                 } else {
-                    await hanldeAddToCart()
+                    await hanldeAddToCart();
                 }
-
             }
-
         } catch (error) {
             console.log(error);
         }
@@ -88,7 +82,6 @@ const Quantity = (props: IProps) => {
             error: 'Failed to add Data',
         })
         dispatch(cartAction.addToCart({ product: props.product, quantity: num }));
-
     }
 
     return (

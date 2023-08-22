@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header'
 import Wrapper from '@/components/shared/wrapper'
 import Footer from '@/views/Fotter';
 import ReduxProvider from '@/utils/ReduxProvider';
+import toast, { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
             <Header />
             <main className='px-8'>
               {children}
+              <Toaster />
             </main>
             <Footer />
           </Wrapper>

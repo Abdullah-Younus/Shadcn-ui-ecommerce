@@ -5,7 +5,8 @@ import { Button } from "./ui/button";
 import { useDispatch } from "react-redux";
 import { cartAction } from "@/redux/features/cartSlice";
 import { Product } from "@/utils/ProductTypes";
-import { urlForImage } from "sanity/lib/image";
+import { urlForImage } from "../../sanity/lib/image";
+import { toast } from "react-hot-toast";
 
 
 type IProps = {
@@ -23,19 +24,27 @@ const Quantity = (props: IProps) => {
         const res = await fetch("/api/cart", {
             method: "POST",
             body: JSON.stringify({
+                user_id:props.product.userId,
                 product_id: props.product._id,
                 product_name: props.product.name,
                 quantity: num,
                 subcat: props.product.subcat,
-                image: urlForImage(props.product.image).url(),
+                image: props.product.image,
                 price: props.product.price,
-                total_price: props.product.price,
-            })
-        })
-    }
+                total_price: props.product.price * num,
+            }),
+        });
+        return res.json();
+    };
 
     const addToCart = () => {
+        toast.promise(hanldeAddToCart(), {
+            loading: 'Cart Adding.....',
+            success: 'Data Add Successfully',
+            error: 'Failed to add Data',
+        })
         dispatch(cartAction.addToCart({ product: props.product, quantity: num }));
+
     }
 
     return (

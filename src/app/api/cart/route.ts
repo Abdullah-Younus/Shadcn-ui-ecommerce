@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 export const POST = async (request: NextRequest, response: NextResponse) => {
-    const user_id = "12134564654";
 
     const req: addToCart = await request.json();
 
@@ -11,7 +10,7 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
 
         if (req) {
             await db.insert(cartTable).values({
-                user_id: user_id,
+                user_id: req.user_id,
                 product_id: req.product_id,
                 product_name: req.product_name,
                 quantity: req.quantity,

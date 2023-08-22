@@ -28,7 +28,7 @@ export interface Product {
     totalPrice?: number;
     subcat?: string;
     image: StaticImageData | string | any;
-    userId?: string;
+    userId?: number | string;
     quantity?: number;
     tagline:string;
     category:string;

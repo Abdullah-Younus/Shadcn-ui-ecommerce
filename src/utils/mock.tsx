@@ -9,14 +9,17 @@ import p5Image from '/public/p5.png'
 export const products: Product[] = [
     {
         _id: 1,
+        userId:1,
         name: "Product One",
         tagline: "Dress",
         category: "female",
         image: p1Image,
         price: 120,
+        subcat:"Girls shirts"
     },
     {
         _id: 2,
+        userId:2,
         name: "Product Two",
         tagline: "Dress",
         category: "male",
@@ -25,6 +28,7 @@ export const products: Product[] = [
     },
     {
         _id: 3,
+        userId:3,
         name: "Product Three",
         tagline: "Dress",
         category: "kids",
@@ -33,6 +37,7 @@ export const products: Product[] = [
     },
     {
         _id: 4,
+        userId:4,
         name: "Product Two",
         tagline: "Dress",
         category: "male",
@@ -41,6 +46,7 @@ export const products: Product[] = [
     },
     {
         _id: 5,
+        userId:5,
         name: "Product Three",
         tagline: "Dress",
         category: "kids",
@@ -49,6 +55,7 @@ export const products: Product[] = [
     },
     {
         _id: 6,
+        userId:6,
         name: "Product Two",
         tagline: "Dress",
         category: "male",
@@ -57,6 +64,7 @@ export const products: Product[] = [
     },
     {
         _id: 7,
+        userId:7,
         name: "Product Three",
         tagline: "Dress",
         category: "kids",
@@ -65,6 +73,7 @@ export const products: Product[] = [
     },
     {
         _id: 8,
+        userId:8,
         name: "Product Three",
         tagline: "Dress",
         category: "kids",
@@ -73,6 +82,7 @@ export const products: Product[] = [
     },
     {
         _id: 9,
+        userId:9,
         name: "Product Three",
         tagline: "Dress",
         category: "kids",

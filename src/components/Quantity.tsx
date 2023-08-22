@@ -24,7 +24,6 @@ const Quantity = (props: IProps) => {
         const res = await fetch("/api/cart", {
             method: "POST",
             body: JSON.stringify({
-                user_id:props.product.userId,
                 product_id: props.product._id,
                 product_name: props.product.name,
                 quantity: num,

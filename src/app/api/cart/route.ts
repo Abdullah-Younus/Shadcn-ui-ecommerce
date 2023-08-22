@@ -3,14 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 export const POST = async (request: NextRequest, response: NextResponse) => {
-    const user_id = "";
+    const user_id = "12134564654";
 
     const req: addToCart = await request.json();
 
     try {
 
         if (req) {
-            const res = await db.insert(cartTable).values({
+            await db.insert(cartTable).values({
                 user_id: user_id,
                 product_id: req.product_id,
                 product_name: req.product_name,
@@ -20,9 +20,13 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
                 price: req.price,
                 total_price: req.total_price
             }).returning();
+            return NextResponse.json({ message: "Cart add to Database" }, { status: 200 })
+        } else {
+            throw new Error("DB Failed To Cart")
         }
 
     } catch (error) {
         console.log(error);
+        return NextResponse.json({ message: "db Error", error }, { status: 404 })
     }
 }

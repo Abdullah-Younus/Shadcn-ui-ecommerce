@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { useDispatch } from "react-redux";
 import { cartAction } from "@/redux/features/cartSlice";
 import { Product } from "@/utils/ProductTypes";
+import { urlForImage } from "sanity/lib/image";
 
 
 type IProps = {
@@ -18,6 +19,20 @@ const Quantity = (props: IProps) => {
     const dispatch = useDispatch();
     const [num, setNum] = useState(1)
 
+    const hanldeAddToCart = async () => {
+        const res = await fetch("/api/cart", {
+            method: "POST",
+            body: JSON.stringify({
+                product_id: props.product._id,
+                product_name: props.product.name,
+                quantity: num,
+                subcat: props.product.subcat,
+                image: urlForImage(props.product.image).url(),
+                price: props.product.price,
+                total_price: props.product.price,
+            })
+        })
+    }
 
     const addToCart = () => {
         dispatch(cartAction.addToCart({ product: props.product, quantity: num }));

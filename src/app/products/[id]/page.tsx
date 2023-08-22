@@ -36,7 +36,8 @@ const sizes = [
 export default function Page({ params }: { params: { id: number } }) {
 
     const result = getProductDetails(params.id);
-    
+
+    const userId = "12234adfsadfsafsa";
 
     return (
         <div className="flex mt-16 py-10 flex-wrap">
@@ -65,9 +66,9 @@ export default function Page({ params }: { params: { id: number } }) {
                             {/* Quantity  */}
                             <div className="flex gap-x-3 mt-6 items-center">
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
-                                <Quantity product={eachItem} num={1} />
+                                <Quantity product={eachItem} num={1} userId={userId} />
                             </div>
-                           
+
                         </div>
                     </div>
 

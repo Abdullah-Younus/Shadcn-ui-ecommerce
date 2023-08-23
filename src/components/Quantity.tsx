@@ -28,7 +28,6 @@ const Quantity = (props: IProps) => {
         const data = await res.json();
         return data;
     }
-
     const hanldeAddToCart = async () => {
         const res = await fetch("/api/cart", {
             method: "POST",
@@ -42,8 +41,9 @@ const Quantity = (props: IProps) => {
                 total_price: props.product.price * num,
             }),
         });
-        return res.json();
+       
     };
+
 
     const handleCart = async () => {
         try {
@@ -66,14 +66,17 @@ const Quantity = (props: IProps) => {
 
                 if (!res.ok) {
                     throw new Error("Failed to update Data");
-                } else {
-                    await hanldeAddToCart();
-                }
+                } 
+            } else {
+                await hanldeAddToCart();
             }
         } catch (error) {
             console.log(error);
         }
     }
+
+   
+   
 
     const addToCart = () => {
         toast.promise(handleCart(), {

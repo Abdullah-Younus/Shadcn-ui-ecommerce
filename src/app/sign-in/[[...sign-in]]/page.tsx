@@ -5,7 +5,7 @@ export default function Page() {
     return (
         <Wrapper>
             <div className="flex justify-center items-center w-full">
-                <SignIn />;
+                <SignIn afterSignInUrl={"/"} />
             </div>
         </Wrapper>
     );

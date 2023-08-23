@@ -47,12 +47,37 @@ export const PUT = async (request: NextRequest, response: NextResponse) => {
                 total_price: data.price,
             }).where(and(eq(cartTable.user_id, user_id), eq(cartTable.product_id, data.product_id))).returning();
             return NextResponse.json({ message: "Data Updated SuccessFully" }, { status: 200 });
-        }else {
+        } else {
             throw new Error("Error to Update Data");
         }
 
     } catch (error) {
         console.log(error);
-        return  NextResponse.json({ message: error }, { status: 404 })
+        return NextResponse.json({ message: error }, { status: 404 })
     }
+}
+
+
+export const DELETE = async (request: NextRequest) => {
+
+    const user_id = "12234adfsadfsafsa";
+    const Url = request.nextUrl;
+    try {
+        if (Url.searchParams.has("product_id") && user_id) {
+            const product_id = Url.searchParams.get("product_id");
+            const res = await db.delete(cartTable).where(and(eq(cartTable.user_id, user_id), eq(cartTable.product_id, product_id as any))).returning();
+            return NextResponse.json({ message: "Cart Remove" }, { status: 200 });
+
+        } else {
+            if (Url.searchParams.has("product_id")) {
+                throw new Error("Login Required");
+            } else {
+                throw new Error("Product Id Required");
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        return NextResponse.json({ message: error }, { status: 404 });
+    }
+
 }

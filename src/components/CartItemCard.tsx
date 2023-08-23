@@ -39,7 +39,7 @@ const CartItemCard = ({ cartItem }: Props) => {
     }
 
     const handleCartItemDelete = async () => {
-        await fetch(`/api/cart?product_id${cartItem._id}`, {
+        await fetch(`/api/cart?product_id=${cartItem._id}`, {
             method: 'DELETE'
         });
     };
@@ -62,10 +62,18 @@ const CartItemCard = ({ cartItem }: Props) => {
         });
         setNum(num - 1);
         dispatch(cartAction.decreamentCartProduct(cartItem._id as any));
-
     }
 
-    
+    const removeItem = () => {
+        toast.promise(handleCartItemDelete(),{
+            loading: 'Deleting Cart',
+            success: 'Delete Cart Successfully',
+            error: 'Failed to Cart Delete',
+        });
+        dispatch(cartAction.removeProduct(cartItem._id as any))
+    }
+
+
 
 
     return (
@@ -76,7 +84,7 @@ const CartItemCard = ({ cartItem }: Props) => {
             <div className='flex flex-col justify-between items-start w-full'>
                 <div className='flex justify-between items-center w-80 sm:w-full flex-initial'>
                     <h4>{cartItem.name}</h4>
-                    <button>
+                    <button onClick={removeItem}>
                         <Trash size={25} className='cursor-pointer' />
                     </button>
                 </div>

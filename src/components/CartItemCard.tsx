@@ -1,8 +1,11 @@
 "use client";
+import { cartAction } from '@/redux/features/cartSlice';
+import { useAppDispatch } from '@/redux/store';
 import { Product } from '@/utils/ProductTypes';
 import { Trash } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 
 interface Props {
@@ -12,7 +15,44 @@ interface Props {
 const CartItemCard = ({ cartItem }: Props) => {
 
     const [num, setNum] = useState(cartItem.quantity);
+    const dispatch = useAppDispatch();
 
+    const handleQuantity = async (newQty: number) => {
+        const newPrice = cartItem.price * newQty;
+        try {
+            if (newQty) {
+                const res = await fetch('/api/cart', {
+                    method: 'PUT',
+                    body: JSON.stringify({
+                        product_id: cartItem._id,
+                        quantity: newQty,
+                        price: newPrice
+                    })
+                })
+                if (!res.ok) {
+                    throw new Error("Failed to Updated data");
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const handleCartItemDelete = async () => {
+        await fetch(`/api/cart?product_id${cartItem._id}`, {
+            method: 'DELETE'
+        });
+    };
+
+    const qunaitityIncrement = () => {
+        toast.promise(handleQuantity(num + 1), {
+            loading: 'Increment Quantity',
+            success: 'Quantity Increment',
+            error: 'Failed to Increment Quantity',
+        });
+        setNum(num + 1);
+        dispatch(cartAction.addToCart({ product: cartItem, quantity: 1 }));
+    }
 
 
     return (
@@ -40,7 +80,7 @@ const CartItemCard = ({ cartItem }: Props) => {
                             -
                         </button>
                         {num}
-                        <button className='flex justify-center items-center w-10 h-10 border border-gray-700 rounded-full'>
+                        <button onClick={qunaitityIncrement} className='flex justify-center items-center w-10 h-10 border border-gray-700 rounded-full'>
                             +
                         </button>
                     </div>

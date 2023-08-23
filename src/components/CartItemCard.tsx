@@ -54,6 +54,19 @@ const CartItemCard = ({ cartItem }: Props) => {
         dispatch(cartAction.addToCart({ product: cartItem, quantity: 1 }));
     }
 
+    const quantityDecrement = () => {
+        toast.promise(handleQuantity(num - 1), {
+            loading: 'Decrement Quantity',
+            success: 'Quantity Decrement',
+            error: 'Failed to Decrement Quantity',
+        });
+        setNum(num - 1);
+        dispatch(cartAction.decreamentCartProduct(cartItem._id as any));
+
+    }
+
+    
+
 
     return (
         <div className='flex flex-col sm:flex-row items-center justify-center w-full px-5 py-7 gap-5 border-b border-gray-200'>
@@ -76,7 +89,7 @@ const CartItemCard = ({ cartItem }: Props) => {
                     <div>${cartItem.price * cartItem.quantity}</div>
                     <div className='flex justify-center items-center gap-5 text-2xl font-bold mt-8'>
                         <p>Quantity:</p>
-                        <button className='flex justify-center items-center w-10 h-10 border border-gray-700 rounded-full'>
+                        <button onClick={quantityDecrement} className='flex justify-center items-center w-10 h-10 border border-gray-700 rounded-full'>
                             -
                         </button>
                         {num}

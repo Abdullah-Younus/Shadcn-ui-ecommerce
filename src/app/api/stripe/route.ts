@@ -33,12 +33,35 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
                 invoice_creation: {
                     enabled: true,
                 },
+                line_items: body.map((item: any) => {
+                    return {
+                        price_data: {
+                            currency: "usd",
+                            product_data: {
+                                name: item.name,
+                                // images: item.image
+                            },
+                            unit_amount: item.price * 100, // dollar value return * 10
+                        },
+                        quantity: item.quantity,
+                        adjustable_quantity: {
+                            enabled: true,
+                            minimum: 1,
+                            maximum: 10,
+                        }
+
+                    }
+                }),
+                customer: customer.id,
                 success_url: `${request.headers.get("origin")}/success`,
                 cancel_url: `${request.headers.get("origin")}/cart`
-            })
+            });
+            return NextResponse.json({ session }, { status: 200 })
+        } else {
+            return NextResponse.json({ message: 'Product data is missing to Stripe OR no User login' }, { status: 400 })
         }
-
     } catch (error) {
+        console.log('Stripe Api Error ===>', error);
 
     }
 

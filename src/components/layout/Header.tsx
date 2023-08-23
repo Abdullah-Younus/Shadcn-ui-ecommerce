@@ -20,7 +20,7 @@ const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     const [cartItem, setCartItem] = useState<number>(0);
 
-    const totalItem = useAppSelector((state)=> state.cart.totalQuantity);
+    const totalItem = useAppSelector((state) => state.cart.totalQuantity);
 
 
     return (
@@ -57,12 +57,15 @@ const Header = () => {
                         <Search />
                         <input type="text" className='flex-grow pl-3 pr-5 w-80 py-1 w-72 focus:border-white' placeholder='Search Bar' />
                     </div>
-                    <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
-                        <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
-                            <span className='text-white'>{totalItem ? totalItem : 0}</span>
+                    <Link href={'/cart'}>
+                        <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
+                            <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
+                                <span className='text-white'>{totalItem ? totalItem : 0}</span>
+                            </div>
+                            <ShoppingCart className='h-7 w-7' />
                         </div>
-                        <ShoppingCart className='h-7 w-7' />
-                    </div>
+                    </Link>
+
                     {/* <div className='flex justify-between items-center py-6 px-8'>
                 <Link href={"/"}>
                     <Image src={logo} alt='logo' />

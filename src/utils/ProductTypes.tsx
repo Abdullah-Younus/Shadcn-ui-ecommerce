@@ -29,7 +29,7 @@ export interface Product {
     subcat?: string;
     image: StaticImageData | string | any;
     userId?: number | string;
-    quantity?: number;
+    quantity?: number | any;
     tagline:string;
     category:string;
 }

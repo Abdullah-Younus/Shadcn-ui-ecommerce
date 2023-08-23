@@ -1,5 +1,6 @@
 "use client";
 
+import CartItemCard from "@/components/CartItemCard";
 import Wrapper from "@/components/shared/wrapper";
 import { useAppSelector } from "@/redux/store";
 import { ShoppingBag, ShoppingCart } from "lucide-react";
@@ -21,7 +22,9 @@ const CartPage = () => {
                     <h3>Shopping Cart</h3>
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-x-5 px-5">
                         <div className="basis-3/4">
-
+                            {cartItems.map((item: any) => (
+                                <CartItemCard key={item._id} cartItem={item} />
+                            ))}
                         </div>
                         <div className="basis-1/4 bg-gray-200 rounded-md w-full h-full mt-5 sm:mt-0 p-2 self-start">
                             <div className="flex flex-col items-center justify-between gap-5">

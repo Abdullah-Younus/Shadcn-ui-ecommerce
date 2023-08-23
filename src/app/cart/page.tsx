@@ -1,6 +1,7 @@
 "use client";
 
 import CartItemCard from "@/components/CartItemCard";
+import StripeCheckoutButton from "@/components/StripeCheckoutButton";
 import Wrapper from "@/components/shared/wrapper";
 import { useAppSelector } from "@/redux/store";
 import { ShoppingBag, ShoppingCart } from "lucide-react";
@@ -42,7 +43,7 @@ const CartPage = () => {
                                     <div><p>${totalPrice}</p></div>
                                 </div>
                                 <div>
-                                    Stripe Checkout
+                                    <StripeCheckoutButton />
                                 </div>
                             </div>
                         </div>

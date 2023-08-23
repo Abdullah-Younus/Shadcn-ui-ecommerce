@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Quantity from "@/components/Quantity";
 import { Button } from "@/components/ui/button";
 import { client } from "../../../../sanity/lib/client";
+import { auth } from "@clerk/nextjs";
 
 /// sanity kae liya
 const getProduct = async ({ params }: any) => {
@@ -36,8 +37,8 @@ const sizes = [
 export default function Page({ params }: { params: { id: number } }) {
 
     const result = getProductDetails(params.id);
-
-    const userId = "12234adfsadfsafsa";
+    const { userId: user_id } = auth();
+    // const userId = "12234adfsadfsafsa";
 
     return (
         <div className="flex mt-16 py-10 flex-wrap">
@@ -66,7 +67,7 @@ export default function Page({ params }: { params: { id: number } }) {
                             {/* Quantity  */}
                             <div className="flex gap-x-3 mt-6 items-center">
                                 <h3 className="text-[10px] font-semibold">Quantity:</h3>
-                                <Quantity product={eachItem} num={1} userId={userId} />
+                                <Quantity product={eachItem} num={1} userId={user_id} />
                             </div>
 
                         </div>

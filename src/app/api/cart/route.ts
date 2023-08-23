@@ -1,17 +1,19 @@
 import { addToCart, cartTable, db } from "@/lib/drizzle";
+import { auth } from "@clerk/nextjs";
 import { and, eq } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
 
 export const POST = async (request: NextRequest, response: NextResponse) => {
 
-    const user_id = "12234adfsadfsafsa";
+    const { user_id }: any = auth();
+    // const user_id = "12234adfsadfsafsa";
 
     const req: addToCart = await request.json();
 
     try {
 
-        if (req) {
+        if (req && user_id) {
             await db.insert(cartTable).values({
                 user_id: user_id,
                 product_id: req.product_id,
@@ -36,12 +38,13 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
 
 export const PUT = async (request: NextRequest, response: NextResponse) => {
 
-    const user_id = "12234adfsadfsafsa";
+    // const user_id = "12234adfsadfsafsa";
+    const { user_id }: any = auth();
 
 
     const data: addToCart = await request.json();
     try {
-        if (data) {
+        if (data && user_id) {
             await db.update(cartTable).set({
                 quantity: data.quantity,
                 total_price: data.price,
@@ -60,7 +63,9 @@ export const PUT = async (request: NextRequest, response: NextResponse) => {
 
 export const DELETE = async (request: NextRequest) => {
 
-    const user_id = "12234adfsadfsafsa";
+    // const user_id = "12234adfsadfsafsa";
+    const { user_id }: any = auth();
+
     const Url = request.nextUrl;
     try {
         if (Url.searchParams.has("product_id") && user_id) {
@@ -81,3 +86,5 @@ export const DELETE = async (request: NextRequest) => {
     }
 
 }
+
+

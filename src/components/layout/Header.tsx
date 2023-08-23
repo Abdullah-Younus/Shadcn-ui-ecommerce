@@ -13,6 +13,7 @@ import { XCircle } from 'lucide-react';
 // import MobileMenu from '@/views/subcatergory/MobileMenu';
 import Expand from '@/views/subcatergory/Expand';
 import { useAppSelector } from '@/redux/store';
+import { UserButton } from '@clerk/nextjs';
 
 
 const Header = () => {
@@ -57,6 +58,7 @@ const Header = () => {
                         <Search />
                         <input type="text" className='flex-grow pl-3 pr-5 w-80 py-1 w-72 focus:border-white' placeholder='Search Bar' />
                     </div>
+                    <UserButton afterSignOutUrl="/"/>
                     <Link href={'/cart'}>
                         <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
                             <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>

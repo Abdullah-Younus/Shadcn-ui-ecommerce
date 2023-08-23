@@ -7,6 +7,7 @@ import Wrapper from '@/components/shared/wrapper'
 import Footer from '@/views/Fotter';
 import ReduxProvider from '@/utils/ReduxProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -20,19 +21,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <ClerkProvider>
       <ReduxProvider>
-        <body className="scrollbar">
-          <Wrapper>
-            <Header />
-            <main className='px-8'>
-              {children}
-              <Toaster />
-            </main>
-            <Footer />
-          </Wrapper>
-        </body>
+        <html lang="en">
+          <body className="scrollbar">
+            <Wrapper>
+              <Header />
+              <main className='px-8'>
+                {children}
+                <Toaster />
+              </main>
+              <Footer />
+            </Wrapper>
+          </body>
+        </html>
       </ReduxProvider>
-    </html>
+    </ClerkProvider>
+
   )
 }

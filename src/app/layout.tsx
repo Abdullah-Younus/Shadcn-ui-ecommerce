@@ -7,7 +7,7 @@ import Wrapper from '@/components/shared/wrapper'
 import Footer from '@/views/Fotter';
 import ReduxProvider from '@/utils/ReduxProvider';
 import toast, { Toaster } from 'react-hot-toast';
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider, auth } from '@clerk/nextjs'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -20,13 +20,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const { userId }: any = auth();
   return (
     <ClerkProvider>
       <ReduxProvider>
         <html lang="en">
-          <body className="scrollbar">
+          <body className="scrollbar" >
             <Wrapper>
-              <Header />
+              <Header userId={userId} />
               <main className='px-8'>
                 {children}
                 <Toaster />

@@ -1,18 +1,34 @@
 import { Product } from "@/utils/ProductTypes";
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { urlForImage } from "../../../sanity/lib/image";
 
 interface CartState {
     items: Array<Product> | any;
     totalAmount: number;
     totalQuantity: number;
+    isLoading: boolean;
+    error: any;
 }
 
 const initialState: CartState = {
     items: [],
     totalAmount: 0,
-    totalQuantity: 0
+    totalQuantity: 0,
+    isLoading: false,
+    error: null
 }
+
+export const fetchData = createAsyncThunk(
+    "cart/fetchdata",
+    async (userId: string) => {
+        const res = await fetch(`/api/cart/${userId}`);
+        if (!res.ok) {
+            console.log('Failed to Get Data');
+        }
+        const data = await res.json();
+        return data;
+    }
+)
 
 
 export const cartSlice = createSlice({
@@ -61,6 +77,23 @@ export const cartSlice = createSlice({
                 existingItem!.totalPrice = existingItem!.totalPrice - existingItem?.price!;
             }
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(fetchData.pending, (state) => {
+            state.isLoading = true;
+        });
+        builder.addCase(fetchData.fulfilled, (state, action) => {
+            const { cartItems, totalQuantity, totalPrice } = action.payload;
+            state.items = cartItems;
+            state.totalAmount = totalPrice;
+            state.totalQuantity = totalQuantity;
+            state.isLoading = false;
+
+        });
+        builder.addCase(fetchData.rejected, (state,action) => {
+            state.isLoading = false;
+            state.error = action.error
+        })
     }
 });
 

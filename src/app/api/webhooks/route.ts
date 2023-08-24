@@ -9,12 +9,13 @@ const endPointSecret = process.env.NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET as string;
 export const POST = async (request: any, res: any) => {
 
     const headerList = headers();
+    console.log('Process ==>',process.env.NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET );
 
     try {
         const rawBody = await request.text();
         const signature = headerList.get("stripe-signature");
 
-        const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET as string, {
+        const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY as string, {
             apiVersion: '2023-08-16'
         });
 
@@ -46,8 +47,7 @@ export const POST = async (request: any, res: any) => {
 
             console.log('payment success --- ', session);
 
-            // @ts-ignore 
-            const line_items = await stripe.checkout.sessions.listLineItem(event.data.object!.id);
+            const line_items = await stripe.checkout.sessions.listLineItems(event.data.object!.id);
 
             return new Response("Payment Confirmation Router Reciept");
         } else {

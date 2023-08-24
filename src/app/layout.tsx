@@ -1,14 +1,14 @@
 import './globals.css'
 import './scrollbar.css';
 
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Wrapper from '@/components/shared/wrapper'
 import Footer from '@/views/Fotter';
 import ReduxProvider from '@/utils/ReduxProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import { ClerkProvider, auth } from '@clerk/nextjs'
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',

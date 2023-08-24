@@ -30,15 +30,15 @@ async function getProductData() {
 
 async function Home() {
 
-  let { data } = await getProductData();
+  // let { data }: any = await getProductData();
 
   return (
     <div>
       <Hero />
       <ProductType />
-      <ProductCarousel ProductData={data} />
-      <Jewellery/>
-      <Newslatter/>
+      {/* <ProductCarousel ProductData={data} /> */}
+      <Jewellery />
+      <Newslatter />
       {/* <ProductList/> */}
     </div>
   )

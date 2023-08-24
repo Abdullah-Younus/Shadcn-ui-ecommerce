@@ -43,7 +43,7 @@ const CartPage = () => {
                                     <div><p>${totalPrice}</p></div>
                                 </div>
                                 <div>
-                                    <StripeCheckoutButton />
+                                    <StripeCheckoutButton products={cartItems} />
                                 </div>
                             </div>
                         </div>

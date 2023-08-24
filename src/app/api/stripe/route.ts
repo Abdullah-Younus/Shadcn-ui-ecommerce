@@ -60,8 +60,9 @@ export const POST = async (request: NextRequest, response: NextResponse) => {
         } else {
             return NextResponse.json({ message: 'Product data is missing to Stripe OR no User login' }, { status: 400 })
         }
-    } catch (error) {
+    } catch (error: any) {
         console.log('Stripe Api Error ===>', error);
+        return NextResponse.json(error.message)
 
     }
 

@@ -88,15 +88,15 @@ export default async function Page({ params }: { params: { id: number | any} }) 
 
 
 
-export async function generateStaticParams() {
-    const query = `*[_type == "product"]{
-        slug{
-            current
-        }
-    }`;
-    const res = await client.fetch(query);
+// export async function generateStaticParams() {
+//     const query = `*[_type == "product"]{
+//         slug{
+//             current
+//         }
+//     }`;
+//     const res = await client.fetch(query);
 
-    return res.map((product: { slug: { current: any; }; }) => ({
-        slug: product.slug.current
-    }))
-}
+//     return res.map((product: { slug: { current: any; }; }) => ({
+//         slug: product.slug.current
+//     }))
+// }

@@ -36,7 +36,7 @@ const Quantity = (props: IProps) => {
                 product_name: props.product.name,
                 quantity: num,
                 subcat: props.product.subcat,
-                image: props.product.image,
+                image: urlForImage(props.product.image).url(),
                 price: props.product.price,
                 total_price: props.product.price * num,
             }),

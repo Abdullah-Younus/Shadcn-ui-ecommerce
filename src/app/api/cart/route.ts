@@ -7,7 +7,6 @@ import { NextRequest, NextResponse } from "next/server";
 export const POST = async (request: NextRequest, response: NextResponse) => {
 
     const { userId }: any = auth();
-    console.log('User_id',userId);
     const req: addToCart = await request.json();
 
     try {

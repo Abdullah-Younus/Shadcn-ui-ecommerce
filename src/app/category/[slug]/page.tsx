@@ -1,19 +1,23 @@
 import { products } from "@/utils/mock";
 import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
+import { client } from "../../../../sanity/lib/client";
+import { Product } from "@/utils/ProductTypes";
 
-const getProducts = (category: string) => {
-    return products.filter((product) => product.category === category);
+const getProducts = async(category: string) => {
+    const query = `*[_type=="product" && category=="${category}"]`;
+    const res = await client.fetch(query);
+    return res;
+
 }
 
 
-export default function Page({ params }: { params: { slug: string } }) {
-
-    const result = getProducts(params.slug);
+export default async function Page({ params }: { params: { slug: string } }) {
+    const result = await getProducts(params.slug);
 
     return (
         <div className='flex justify-evenly flex-wrap mt-16 gap-y-5'>
-            {result.length > 0 ? result.map((eachItem) => (
+            {result.length > 0 ? result.map((eachItem:Product) => (
                 <ProductCard
                     key={eachItem._id}
                     name={eachItem.name}

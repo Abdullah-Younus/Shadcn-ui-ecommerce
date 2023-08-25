@@ -22,12 +22,13 @@ export interface responseType {
 
 /// redux slice interface
 export interface Product {
+    id?:number;
     _id: number;
     name: string;
     price: number;
     totalPrice?: number;
     subcat?: string;
-    image: StaticImageData | string | any;
+    image: any;
     userId?: number | string;
     quantity?: number | any;
     tagline:string;

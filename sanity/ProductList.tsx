@@ -1,64 +1,14 @@
 import { defineField } from "sanity";
 
 export const product = {
-    name: "product",
+    name: "product", /// or ya name hum jub data get karay gay phir ay ga
     type: "document",
-    title: "Product",
+    title: "Product", /// ya title sanity kae studio kae liya han sanity kae studio par name likha ay ga
     fields: [
         {
-            name: "title",
-            title: "Product Title",
+            name: "name",
+            title: "Product Name",
             type: "string",
-        },
-        {
-            name: "slug",
-            title: "Slug",
-            type: "slug",
-            options: {
-                source: "title",
-                maxLength: 200,
-                slugify: (input: string) => input
-                    .toLowerCase()
-                    .replace(/\s+/g, '-')
-                    .slice(0, 200)
-            }
-        },
-        {
-            name: "description",
-            title: "Product Description",
-            type: "array",
-            of: [
-                {
-                    type: "block"
-                }
-            ]
-        },
-        {
-            name: "image",
-            title: "Product Image",
-            type: "array",
-            of: [
-                {
-                    type: "image",
-                    fields: [
-                        {
-                            name: "alt",
-                            type: "text",
-                            title: "Alternative text"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: "productTypes",
-            type: "array",
-            title: "Product Type",
-            of: [
-                {
-                    type: "string"
-                }
-            ]
         },
         {
             name: "price",
@@ -66,16 +16,88 @@ export const product = {
             type: "number",
         },
         {
-            name: "size",
-            title: "Size",
-            type: "array",
-            of: [{ type: 'string' }]
+            name: "subcat",
+            title: "Product Subcatoray",
+            type: "string",
         },
         {
             name: "quantity",
-            title: "Quantity",
+            title: "Product Quantity",
+            type: "number",
+        },
+        {
+            name: "tagline",
+            title: "Product Tagling",
+            type: "string",
+        },
+        {
+            name: "image",
+            title: "Product Image",
+            type: "image",
+        },
+        {
+            name: "category",
+            title: "Product Category",
             type: "string"
         }
+        // defineField({
+        //     name: "category",
+        //     title: "Product Category",
+        //     type: "string"
+        // }),
+        // {
+        //     name: "description",
+        //     title: "Product Description",
+        //     type: "array",
+        //     of: [
+        //         {
+        //             type: "block"
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: "image",
+        //     title: "Product Image",
+        //     type: "array",
+        //     of: [
+        //         {
+        //             type: "image",
+        //             fields: [
+        //                 {
+        //                     name: "alt",
+        //                     type: "text",
+        //                     title: "Alternative text"
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: "productTypes",
+        //     type: "array",
+        //     title: "Product Type",
+        //     of: [
+        //         {
+        //             type: "string"
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: "price",
+        //     title: "Product Price",
+        //     type: "number",
+        // },
+        // {
+        //     name: "size",
+        //     title: "Size",
+        //     type: "array",
+        //     of: [{ type: 'string' }]
+        // },
+        // {
+        //     name: "quantity",
+        //     title: "Quantity",
+        //     type: "string"
+        // }
         // defineField({
         //     name: "category",
         //     title: "Product Category",  

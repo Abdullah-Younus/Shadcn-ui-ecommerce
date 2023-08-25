@@ -9,7 +9,6 @@ const endPointSecret = process.env.NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET as string;
 export const POST = async (request: any, res: any) => {
 
     const headerList = headers();
-    console.log('Process ==>',process.env.NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET );
 
     try {
         const rawBody = await request.text();
@@ -45,7 +44,6 @@ export const POST = async (request: any, res: any) => {
 
             await db.delete(cartTable).where(eq(cartTable.user_id, userId));
 
-            console.log('payment success --- ', session);
 
             const line_items = await stripe.checkout.sessions.listLineItems(event.data.object!.id);
 

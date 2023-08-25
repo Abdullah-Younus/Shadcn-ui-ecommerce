@@ -6,6 +6,7 @@ import { Trash } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { urlForImage } from '../../sanity/lib/image';
 
 
 interface Props {
@@ -75,11 +76,10 @@ const CartItemCard = ({ cartItem }: Props) => {
 
 
 
-
     return (
         <div className='flex flex-col sm:flex-row items-center justify-center w-full px-5 py-7 gap-5 border-b border-gray-200'>
             <div className=''>
-                {/* <Image src={cartItem.image} alt={cartItem.name} width={250} height={250} className='rounded-md' /> */}
+                <Image src={urlForImage(cartItem.image).url()} alt={cartItem.name} width={250} height={250} className='rounded-md' />
             </div>
             <div className='flex flex-col justify-between items-start w-full'>
                 <div className='flex justify-between items-center w-80 sm:w-full flex-initial'>

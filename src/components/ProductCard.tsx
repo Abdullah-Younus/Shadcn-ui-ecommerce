@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from 'next/image';
-import p1Image from '/public/p1.png';
 import { FC } from "react";
 import { Button } from "@/components/ui/button"
 import { Product } from '@/utils/ProductTypes';
 import Link from 'next/link';
+import { urlForImage } from '../../sanity/lib/image';
 interface ProductData {
     title: string,
     price: number,
@@ -12,10 +12,11 @@ interface ProductData {
 
 export const ProductCard = ({ name, price, image, category, _id }: Product) => {
 
+    console.log('Product Image',image);
     return (
         <div>
             <Link href={`/products/${_id}`}>
-                <Image src={image} alt='Picture' />
+                <Image src={urlForImage(image).url()} alt='Picture' width={300} height={300}/>
                 <h3 className='font-bold text-lg mt-3'>
                     {name}
                 </h3>

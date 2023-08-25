@@ -1,14 +1,16 @@
-import { products } from "@/utils/mock";
+// import { products } from "@/utils/mock";
 import { ProductCard } from "@/components/ProductCard";
 import Image, { StaticImageData } from "next/image";
 import Quantity from "@/components/Quantity";
 import { Button } from "@/components/ui/button";
 import { client } from "../../../../sanity/lib/client";
 import { auth } from "@clerk/nextjs";
+import { urlForImage } from "../../../../sanity/lib/image";
+import { Product } from "@/utils/ProductTypes";
 
 /// sanity kae liya
-const getProduct = async ({ params }: any) => {
-    const query = `*[_type == "product" && slug.current == "${params.slug}"][0]{
+const getProduct = async (id:any) => {
+    const query = `*[_type == "product" && _id =="${id}"]{
         _id,
         name,
         price,
@@ -21,9 +23,9 @@ const getProduct = async ({ params }: any) => {
 }
 
 
-const getProductDetails = (id: number) => {
-    return products.filter((product) => product._id == id);
-}
+// const getProductDetails = (id: number) => {
+//     return products.filter((product) => product._id == id);
+// }
 
 
 const sizes = [
@@ -34,19 +36,23 @@ const sizes = [
     "xl"
 ]
 
-export default function Page({ params }: { params: { id: number } }) {
+export default async function Page({ params }: { params: { id: number | any} }) {
 
-    const result = getProductDetails(params.id);
+
+
+    const result = await getProduct(params.id);
     const { userId: user_id } = auth();
+
+
     // const userId = "12234adfsadfsafsa";
 
     return (
         <div className="flex mt-16 py-10 flex-wrap">
-            {result.map((eachItem) => (
+            {result.map((eachItem:Product) => (
                 <div key={eachItem._id} className="flex justify-between gap-6">
                     {/* Left Side  */}
                     <div>
-                        <Image src={eachItem.image} alt={eachItem.name} />
+                        <Image src={urlForImage(eachItem.image).url()} alt={eachItem.name} width={245} height={245}/>
                     </div>
                     {/* Right Side  */}
                     <div>

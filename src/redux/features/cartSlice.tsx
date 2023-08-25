@@ -45,7 +45,7 @@ export const cartSlice = createSlice({
                 const totalPrice = newItem.price * action.payload.quantity;
                 state.items.push({
                     ...newItem,
-                    // image: urlForImage(newItem.image[0]).url(),
+                    image: newItem.image,
                     quantity: action.payload.quantity,
                     totalPrice,
                 });

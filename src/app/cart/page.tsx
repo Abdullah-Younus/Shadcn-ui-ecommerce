@@ -12,10 +12,9 @@ const CartPage = () => {
     const totalItems = useAppSelector((state) => state.cart.totalQuantity)
     const totalPrice = useAppSelector((state) => state.cart.totalAmount)
 
-    console.log('CartItems ===>', cartItems);
+    console.log('cartItems ==>',cartItems);
 
     if (cartItems.length > 0) {
-        console.log("Entering if block with cartItems:", cartItems);
         return (
             <div>
 

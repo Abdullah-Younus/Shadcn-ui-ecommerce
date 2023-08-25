@@ -51,7 +51,6 @@ const Quantity = (props: IProps) => {
             const cartData = await getDataFromDB();
             const existingItem = cartData?.cartItems?.find((item: any) => parseInt(item._id) === props.product._id);
             if (existingItem) {
-                console.log('existingItem', existingItem);
                 const newQuantity = existingItem.quantity + num;
                 const newTotalPrice = props.product.price * newQuantity;
 

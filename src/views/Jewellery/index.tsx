@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React from 'react'
+import checkImage from '../../../image/centerimg.png';
+import React from 'react';
 
 const Jewellery = () => {
   return (
@@ -31,12 +32,13 @@ const Jewellery = () => {
             <h6 className='font-semibold text-xl'>Using Good Quality Materials</h6>
             <p className='text-lg leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           </div>
+
         </div>
         {/* right  */}
 
         <div className='flex flex-col lg:flex-row flex-1'>
           <div className='w-full px-4 lg:px-0 lg:w-80'>
-            <Image src={'/public/p1.png'} alt='Materials' width={400} height={400} />
+            <Image src={checkImage} alt='Materials' />
           </div>
           <div className='p-6'>
             <p style={{ wordSpacing: "0.8rem" }} className='h-[90%] lg:max-w-[15rem]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa laboriosam tempore, atque quam quis aut doloremque? Suscipit at quaerat, inventore, nam, provident ratione quae cumque sapiente mollitia perferendis accusamus nemo!</p>

@@ -58,20 +58,20 @@ const Header = ({ userId }: { userId: string }) => {
                                 {eachItem.isDropDown && <div className={`invisible group-hover:visible absolute left-0 top-8 p-2 py-2 px-6 border border-gray-200 text-sm font-light min-w-[7.8rem]`}>
                                     <DropdownMenu item={eachItem} />
                                 </div>} */}
-                                
+
 
                             </li>
                         ))}
                         <div className='hidden'>
-                        <Link href={'/cart'}>
-                        <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
-                            <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
-                                <span className='text-white'>{totalItem ? totalItem : 0}</span>
-                            </div>
+                            <Link href={'/cart'}>
+                                <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
+                                    <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
+                                        <span className='text-white'>{totalItem ? totalItem : 0}</span>
+                                    </div>
 
-                            <ShoppingCart className='h-7 w-7' />
-                        </div>
-                    </Link>
+                                    <ShoppingCart className='h-7 w-7' />
+                                </div>
+                            </Link>
                         </div>
                     </ul>
                     <div className='border flex items-center text-black-600 px-2 rounded-md'>
@@ -79,7 +79,7 @@ const Header = ({ userId }: { userId: string }) => {
                         <input type="text" className='flex-grow pl-3 pr-5 w-80 py-1 w-72 focus:border-white' placeholder='Search Bar' />
                     </div>
                     <span>
-                        <UserButton afterSignOutUrl="/"  />
+                        <UserButton afterSignOutUrl="/" />
                     </span>
                     <Link href={'/cart'}>
                         <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
@@ -148,18 +148,32 @@ const Header = ({ userId }: { userId: string }) => {
 export default Header;
 
 const MobileMenu = () => {
-
+    const totalItem = useAppSelector((state) => state.cart.totalQuantity);
     return (
         <div className="w-full px-6 py-4 bg-gray-100">
             {
                 navBarArray.map((eachItem: NavbarType, index: number) => {
                     return (
                         <div key={index}>
+
                             <Expand eachItem={eachItem} />
                         </div>
                     )
                 })
+
             }
+            <div>
+                <Link href={'/cart'}>
+                    <div className='flex-shrink-0 relative h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center'>
+                        <div className='absolute w-5 h-5 top-1 left-5 py-1.5 flex justify-center items-center bg-red-600 text-base font-normal rounded-full '>
+                            <span className='text-white'>{totalItem ? totalItem : 0}</span>
+                        </div>
+
+                        <ShoppingCart className='h-7 w-7' />
+                    </div>
+                </Link>
+            </div>
+
         </div>
     )
 }

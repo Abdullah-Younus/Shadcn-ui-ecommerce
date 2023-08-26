@@ -51,8 +51,8 @@ export default async function Page({ params }: { params: { id: number | any} }) 
             {result.map((eachItem:Product) => (
                 <div key={eachItem._id} className="flex justify-between gap-6">
                     {/* Left Side  */}
-                    <div>
-                        <Image src={urlForImage(eachItem.image).url()} alt={eachItem.name} width={245} height={245}/>
+                    <div className="border">
+                        <Image className="h-full" src={urlForImage(eachItem.image).url()} alt={eachItem.name} width={245} height={245}/>
                     </div>
                     {/* Right Side  */}
                     <div>

@@ -105,7 +105,7 @@ const Quantity = (props: IProps) => {
                 </button>
             </div>
             <div className="flex justify-center mt-6 items-center gap-x-4">
-                <Button className="bg-black h-9 px-8" onClick={addToCart}>Add to Cart</Button>
+                <Button className="flex bg-black" onClick={addToCart}>Add to Cart</Button>
                 <h2 className="text-2xl font-bold">${props.product.price.toFixed(2)}</h2>
             </div>
         </>

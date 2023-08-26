@@ -41,7 +41,7 @@ const Quantity = (props: IProps) => {
                 total_price: props.product.price * num,
             }),
         });
-       
+
     };
 
 
@@ -65,7 +65,7 @@ const Quantity = (props: IProps) => {
 
                 if (!res.ok) {
                     throw new Error("Failed to update Data");
-                } 
+                }
             } else {
                 await hanldeAddToCart();
             }
@@ -74,8 +74,8 @@ const Quantity = (props: IProps) => {
         }
     }
 
-   
-   
+
+
 
     const addToCart = () => {
         toast.promise(handleCart(), {
@@ -89,6 +89,8 @@ const Quantity = (props: IProps) => {
     return (
         <>
             <div className="flex gap-x-4 items-center">
+                <h3 className="text-[10px] font-semibold">Quantity:</h3>
+
                 {/* Miunus   */}
                 <button className="border h-7 w-7 rounded-full flex justify-center items-center" onClick={() => setNum(num <= 1 ? 1 : num - 1)}>
                     -

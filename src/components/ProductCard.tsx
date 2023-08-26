@@ -29,7 +29,7 @@ export const ProductCard = ({ name, price, image, category, _id }: Product) => {
                         {category}
                     </span>
                 </p>
-                <Button className='mt-5'>Add to Cart</Button>
+                {/* <Button className='mt-5'>Add to Cart</Button> */}
             </Link>
         </div>
 

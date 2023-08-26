@@ -71,8 +71,7 @@ export default async function Page({ params }: { params: { id: number | any} }) 
                                 ))}
                             </div>
                             {/* Quantity  */}
-                            <div className="flex gap-x-3 mt-6 items-center">
-                                <h3 className="text-[10px] font-semibold">Quantity:</h3>
+                            <div className="gap-x-3 mt-6 items-center">
                                 <Quantity product={eachItem} num={1} userId={user_id} />
                             </div>
 

@@ -5,8 +5,8 @@ const Jewellery = () => {
   return (
     <div className='px-1'>
       {/* top  */}
-      <div className='border-4 flex justify-start md:justify-end text-4xl md:text-5xl font-bold  py-4'>
-        <h6 className='max-w-xs'>Unique and Authentic Vintage Designer Jewellery</h6>
+      <div className='border-4 flex justify-start md:justify-end text-4xl md:text-5xl font-bold py-4'>
+        <h6 className='max-w-2xl'>Unique and Authentic Vintage Designer Jewellery</h6>
       </div>
       {/* bottom  */}
       <div className='flex flex-col md:flex-row justify-between py-4 mt-2 gap-5'>
@@ -36,7 +36,7 @@ const Jewellery = () => {
 
         <div className='flex flex-col lg:flex-row flex-1'>
           <div className='w-full px-4 lg:px-0 lg:w-80'>
-            <Image src={'/public/p1.png'} alt='Materials' width={1000} height={1000} />
+            <Image src={'/public/p1.png'} alt='Materials' width={400} height={400} />
           </div>
           <div className='p-6'>
             <p style={{ wordSpacing: "0.8rem" }} className='h-[90%] lg:max-w-[15rem]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa laboriosam tempore, atque quam quis aut doloremque? Suscipit at quaerat, inventore, nam, provident ratione quae cumque sapiente mollitia perferendis accusamus nemo!</p>

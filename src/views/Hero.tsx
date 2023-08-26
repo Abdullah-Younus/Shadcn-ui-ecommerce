@@ -8,7 +8,7 @@ function Hero() {
     return (
         <section className="flex flex-col lg:flex-row gap-y-10 py-6">
             {/* left side  */}
-            <div className="flex-1 ">
+            <div className="flex-1 mt-28">
                 <Badge className="py-3 px-6 rounded-lg bg-blue-200 text-blue-700 hover:bg-none">
                     Sale 70%
                 </Badge>
@@ -32,8 +32,10 @@ function Hero() {
 
             </div>
             {/* Right side  */}
-            <div className="hidden md:flex  flex-1 bg-[#ffece3] rounded-full w-auto h-auto">
-                <Image src={heroImage} alt="Hero Image" />
+            <div className="hidden md:flex flex-1">
+                <div className="w-auto h-auto rounded-full bg-[#ffece3]">
+                    <Image src={heroImage} alt="Hero Image" />
+                </div>
             </div>
         </section>
     )

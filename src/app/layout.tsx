@@ -1,5 +1,5 @@
 import './globals.css'
-import './scrollbar.css';
+// import './scrollbar.css';
 
 // import { Inter } from 'next/font/google'
 import Header from '@/components/layout/Header'
@@ -25,7 +25,7 @@ export default function RootLayout({
     <ClerkProvider>
       <ReduxProvider>
         <html lang="en">
-          <body className="scrollbar" >
+          <body>
             <Wrapper>
               <Header userId={userId} />
               <main className='px-8'>

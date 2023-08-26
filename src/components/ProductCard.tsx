@@ -14,8 +14,8 @@ export const ProductCard = ({ name, price, image, category, _id }: Product) => {
 
     console.log('Product Image',image);
     return (
-        <div>
-            <Link href={`/products/${_id}`}>
+        <div className='w-[350px]'>
+            <Link href={`/products/${_id}`}> 
                 <Image src={urlForImage(image).url()} alt='Picture' width={300} height={300}/>
                 <h3 className='font-bold text-lg mt-3'>
                     {name}
@@ -29,7 +29,7 @@ export const ProductCard = ({ name, price, image, category, _id }: Product) => {
                         {category}
                     </span>
                 </p>
-                <Button>Add to Cart</Button>
+                <Button className='mt-5'>Add to Cart</Button>
             </Link>
         </div>
 

@@ -24,7 +24,7 @@ async function AllProducts() {
 
     return (
         <div>
-            <div className='flex justify-evenly flex-wrap mt-16 gap-y-5'>
+            <div className='flex justify-between flex-wrap mt-16 gap-y-12'>
                 {data.map((eachItem: Product) => (
                     <ProductCard
                         key={eachItem._id}

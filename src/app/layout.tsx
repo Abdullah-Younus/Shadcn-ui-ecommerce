@@ -27,12 +27,14 @@ export default function RootLayout({
         <html lang="en">
           <body>
             <Wrapper>
-              <Header userId={userId} />
-              <main className='px-8'>
-                {children}
-                <Toaster />
-              </main>
-              <Footer />
+              <div className="wrapper">
+                <Header userId={userId} />
+                <main className='px-8'>
+                  {children}
+                  <Toaster />
+                </main>
+                <Footer />
+              </div>
             </Wrapper>
           </body>
         </html>
